@@ -5,9 +5,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float playerSpeed = 5.0f;
+    public float playerSpeed = 15.0f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
+    // Dash
+    public float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = 0.5f;
+    public float dashCooldown = 1f;
+
+    public float dashCounter;
+    public float dashCooldownCounter;
+
+    private void Start()
+    {
+        activeMoveSpeed = playerSpeed;    
+    }
 
     void Update()
     {
@@ -19,12 +34,34 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            controller.Move(move * Time.deltaTime * activeMoveSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("E was pressed");
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dashCooldownCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = playerSpeed;
+                dashCooldownCounter = dashLength;
+            }
+        }
+
+        if (dashCooldownCounter > 0)
+        { dashCooldownCounter -= Time.deltaTime; }
     }
 }
