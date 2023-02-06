@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit(); //closes game
     }
 
-    public void Options()
+    /*public void Options()
     {
         SceneManager.LoadScene("Settings Menu"); //opens secondary menu for settings
     }
@@ -57,5 +57,5 @@ public class MainMenu : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits"); //opens secondary menu for team credits
-    }
+    }*/
 }
