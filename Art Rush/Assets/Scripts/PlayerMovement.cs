@@ -53,9 +53,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) //Escape key to open Main Menu
+        if (Input.GetKeyDown(KeyCode.Alpha0)) //Escape key to open Main Menu
         {
-            SceneManager.LoadScene("PauseMenu");
+            SceneManager.LoadScene("TestingMenu");
         }
 
         if (dashCounter > 0)
