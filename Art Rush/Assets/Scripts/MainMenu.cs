@@ -18,10 +18,6 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        singleplayer_Button.SetActive(true); //shows start button
-        multiplayer_Button.SetActive(true); //shows start button
-        restartButton.SetActive(false); //hides restart button
-        continue_Button.SetActive(false); //hides exit button
     }
 
     // Start is called before the first frame update
@@ -32,15 +28,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlaySingleGame()
     {
-        SceneManager.LoadScene("Singleplayer Game"); //loads game scene
+        SceneManager.LoadScene("Singleplayer Game"); //loads game scene  CHANGE THE NAME TO Singleplayer Game
     }
-    /*
+    
     public void PlayMultiplayerGame()
     {
         SceneManager.LoadScene("Multiplayer Game"); //loads game scene
-        //function that calls for second player(?) ---------------------------------------- in progress
     }
-    */
+    
     public void QuitGame()
     {
         Application.Quit(); //closes game
@@ -54,5 +49,15 @@ public class MainMenu : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits"); //opens secondary menu for team credits
+    }
+
+    public void ShowMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu"); //opens secondary menu for settings
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainMenu"); //opens secondary menu for settings
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //Escape key to open Main Menu
+        {
+            SceneManager.LoadScene("PauseMenu");
         }
 
         if (dashCounter > 0)
