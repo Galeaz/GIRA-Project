@@ -48,14 +48,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit(); //closes game
     }
-
-    /*public void Options()
-    {
-        SceneManager.LoadScene("Settings Menu"); //opens secondary menu for settings
-    }
-
-    public void Credits()
-    {
-        SceneManager.LoadScene("Credits"); //opens secondary menu for team credits
-    }*/
 }

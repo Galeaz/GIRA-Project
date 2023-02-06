@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0)) //Escape key to open Main Menu
+        if (Input.GetKeyDown(KeyCode.Alpha0)) //0 key to open Main Menu (not number pad)
         {
             SceneManager.LoadScene("TestingMenu");
         }
