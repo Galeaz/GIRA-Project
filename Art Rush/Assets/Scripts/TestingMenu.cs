@@ -24,7 +24,7 @@ public class TestingMenu : MonoBehaviour
 
     public void ShowMainMenu()
     {
-        SceneManager.LoadScene("MainMenu"); //opens secondary menu for settings
+        SceneManager.LoadScene("MainMenu"); //change scene to main menu
     }
 
     public void QuitGame()
