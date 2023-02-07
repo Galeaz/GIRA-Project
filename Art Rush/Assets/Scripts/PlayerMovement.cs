@@ -6,24 +6,32 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float playerSpeed = 15.0f;
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
+    [SerializeReference]
+    private CharacterController controller;
+
+    [SerializeField]
+    private float normalSpeed = 15.0f;
+    private float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
 
     // Dash
-    public float activeMoveSpeed;
-    public float dashSpeed;
+    private float activeMoveSpeed;
+    [SerializeField]
+    private float dashSpeed = 30.0f;
+    [SerializeField]
+    private float dashLength = 0.5f;
+    [SerializeField]
+    private float dashCooldown = 1f;
 
-    public float dashLength = 0.5f;
-    public float dashCooldown = 1f;
+    private float dashCounter;
+    private float dashCooldownCounter;
 
-    public float dashCounter;
-    public float dashCooldownCounter;
+    // Interactions
+    public SpawnItems touching;
 
     private void Start()
     {
-        activeMoveSpeed = playerSpeed;    
+        activeMoveSpeed = normalSpeed;    
     }
 
     void Update()
@@ -39,11 +47,23 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move * Time.deltaTime * activeMoveSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && touching.tag == "Item Spawner")
         {
-            Debug.Log("E was pressed");
+            Debug.Log("Item Spawner");
+            // touching.SpawnProp();
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && touching.tag == "Counter")
+        {
+            Debug.Log("Counter");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //Escape key to open Main Menu
+        {
+            SceneManager.LoadScene("TestingMenu");
+        }
+
+        // Dash Cooldown/Duration Controller
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashCooldownCounter <= 0 && dashCounter <= 0)
@@ -53,18 +73,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0)) //Escape key to open Main Menu
-        {
-            SceneManager.LoadScene("TestingMenu");
-        }
-
         if (dashCounter > 0)
         {
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
             {
-                activeMoveSpeed = playerSpeed;
-                dashCooldownCounter = dashLength;
+                activeMoveSpeed = normalSpeed;
+                dashCooldownCounter = dashCooldown;
             }
         }
 
