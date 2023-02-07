@@ -491,7 +491,6 @@ MonoBehaviour:
   options_Button: {fileID: 1075109515}
   credits_Button: {fileID: 47011256}
   quit_Button: {fileID: 2131909838}
-  gameMode: 0
 --- !u!1 &416947753
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -729, y: -79}
+  m_AnchoredPosition: {x: -742, y: -79}
   m_SizeDelta: {x: 100, y: 51.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542854161
@@ -1006,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45098042, g: 0.654902, b: 0.79215693, a: 1}
+  m_Color: {r: 0.9245283, g: 0.27047092, b: 0.14391243, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1427,7 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45098042, g: 0.654902, b: 0.79215693, a: 1}
+  m_Color: {r: 0.89019614, g: 0.25882354, b: 0.14117648, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3267,7 +3266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 733, y: -128}
+  m_AnchoredPosition: {x: 736, y: -128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422909681

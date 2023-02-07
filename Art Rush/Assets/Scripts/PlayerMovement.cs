@@ -28,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         // Start set player's speed to default (normalSpeed)
-        activeMoveSpeed = normalSpeed;    
+        activeMoveSpeed = normalSpeed;
+        Time.timeScale = 1f; //after pausing and reloading scene we need to make the player move again
     }
 
     void Update()

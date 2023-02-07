@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public static GameManager instance;
     public GameObject Pause_Button;
     public GameObject Resume_Button;
 
