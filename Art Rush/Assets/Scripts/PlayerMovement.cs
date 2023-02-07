@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Pressed E");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) //Escape key to open Main Menu
+        if (Input.GetKeyDown(KeyCode.Alpha0)) //0 key to open Main Menu (not number pad)
         {
             SceneManager.LoadScene("TestingMenu");
         }
