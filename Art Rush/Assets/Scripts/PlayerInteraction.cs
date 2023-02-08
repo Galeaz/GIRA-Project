@@ -60,8 +60,11 @@ public class PlayerInteraction : MonoBehaviour
             // If the object hit was not an interactable detarget and change values
             else 
             {
-                target.Offtarget();
-                target.Interact(); // Interact() is here just to show that the interactable is properly detargeted or targeted
+                if (target != null)
+                {
+                    target.Offtarget();
+                    target.Interact(); // Interact() is here just to show that the interactable is properly detargeted or targeted
+                }
                 target = null; 
             }
         }
