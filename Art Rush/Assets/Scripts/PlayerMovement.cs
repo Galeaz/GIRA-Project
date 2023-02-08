@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     // Character Controller reference
-    [SerializeReference] public CharacterController controller;
+    [SerializeReference] private CharacterController controller;
     
     // Player speed variables
     public float activeMoveSpeed;
-    [SerializeField] public float normalSpeed = 15.0f;
-    [SerializeField] public float dashSpeed = 35.0f;
+    [SerializeField] private float normalSpeed = 15.0f;
+    [SerializeField] private float dashSpeed = 35.0f;
 
     // Rotation Variables
     private float turnSmoothTime = 0.06f;

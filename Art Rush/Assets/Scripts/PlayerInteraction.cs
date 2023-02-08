@@ -6,8 +6,19 @@ public class PlayerInteraction : MonoBehaviour
     private Ray ray;
     private float max_dist = 2f;
     private RaycastHit hit;
+    [SerializeField] LayerMask layers_to_hit;
     // Stores what the previous interaction key "interacted with"
     [SerializeField] private Interactable target;
+
+    // Location for objects to go when picked up
+    [SerializeReference]
+    private Transform player_grab_loc;
+    // Stores the item the player is holding by reference to the transform
+    [SerializeField] 
+    public Transform item_held;
+    // Keeps track if Item is held or not
+    [SerializeField]
+    private bool holding_item = false;
 
     private void Update()
     {
@@ -22,10 +33,47 @@ public class PlayerInteraction : MonoBehaviour
             // If the function above returned an interactable
             if (target != null)
             {
-                // Complete the "Interaction", Interaction is a function in the Interactable class that get overridden to do the right interactions
-                target.Interact();
+                // Chain of Ifs figures out what interactable it was
+                // If interact with Item Spawner, should only be able to interact if empty hands
+                if (target.tag == "Item Spawner" && holding_item == false)
+                {
+                    // Call Interact and set proper variables
+                    target.Interact();
+                    // item held stores the transform of the held item
+                    item_held = player_grab_loc.GetChild(0);
+                    holding_item = true;
+                }
+                // If interact with Item Counter
+                else if (target.tag == "Counter")
+                {
+                    // If already holding an item
+                    if (holding_item == true)
+                    {
+                        target.Interact();
+                        // If after the interact we see we aren't holding anything that means we placed the item on the counter
+                        if (player_grab_loc.childCount == 0)
+                        {
+                            holding_item = false;
+                            item_held = null;
+                        }
+                    }
+                    // If holding NO item
+                    else
+                    {
+                        target.Interact();
+                        // If after the interact we see we ARE holding something that means we picked something up
+                        if (player_grab_loc.childCount != 0)
+                        {
+                            holding_item = true;
+                            item_held = player_grab_loc.GetChild(0);
+                        }
+                    }                  
+                }
+                else
+                {
+                    // Do Nothing, Not sure if it needs to do anything when no interactable
+                }
             }
-
         }
     }
 
@@ -35,7 +83,7 @@ public class PlayerInteraction : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         
         // Physics.Raycast returns true if there was a hit
-        if (Physics.Raycast(ray, out hit, max_dist))
+        if (Physics.Raycast(ray, out hit, max_dist, layers_to_hit))
         {
             // Print out what was hit
             Debug.Log(hit.collider.gameObject.name + " was hit");
@@ -49,7 +97,6 @@ public class PlayerInteraction : MonoBehaviour
                 if (target != null && target != interactable)
                 { 
                     target.Offtarget();
-                    target.Interact();
                 }
                 
                 // Set target to the new interactable in front of the player
@@ -63,7 +110,6 @@ public class PlayerInteraction : MonoBehaviour
                 if (target != null)
                 {
                     target.Offtarget();
-                    target.Interact(); // Interact() is here just to show that the interactable is properly detargeted or targeted
                 }
                 target = null; 
             }
@@ -75,7 +121,6 @@ public class PlayerInteraction : MonoBehaviour
             if (target != null)
             {
                 target.Offtarget();
-                target.Interact();
             }
             target = null;
         }
