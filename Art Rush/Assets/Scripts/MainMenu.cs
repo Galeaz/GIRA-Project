@@ -12,12 +12,9 @@ public class MainMenu : MonoBehaviour
 
     public GameObject singleplayer_Button;
     public GameObject multiplayer_Button;
-
     public GameObject options_Button;
     public GameObject credits_Button;
     public GameObject quit_Button;
-
-    public int gameMode; //data used in restart buttton for single or multi player scene reload
 
     private void Awake()
     {
@@ -28,20 +25,17 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(true); //activates menu
-        gameMode = 0;
     }
 
     public void PlaySingleGame()
     {
         SceneManager.LoadScene("Singleplayer Game"); //loads singleplayer game scene
-        gameMode = 1; //one player
     }
     
     public void PlayMultiplayerGame()
     {
         
         SceneManager.LoadScene("Multiplayer Game"); //loads multiplayer game scene
-        gameMode = 2; //two players
     }
     
     public void QuitGame()
