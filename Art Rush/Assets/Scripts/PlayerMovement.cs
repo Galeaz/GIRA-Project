@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float dashSpeed = 35.0f;
 
     // Rotation Variables
-    private float turnSmoothTime = 0.1f;
+    private float turnSmoothTime = 0.06f;
     private float turnSmoothVelocity;
 
     // Dash Variables
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         // Filler Spot for Interaction Key
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E was pressed");
+            // Debug.Log("E was pressed");
         }
 
 
