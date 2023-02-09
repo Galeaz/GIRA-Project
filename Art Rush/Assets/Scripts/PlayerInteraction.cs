@@ -20,16 +20,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private bool holding_item = false;
 
-    // Player's PaintBrush Color
-    // public Color player_color;
-    // Reference to Player's mesh renderer
-    //public MeshRenderer player_mesh;
-
-    private void Start()
-    {
-        //player_mesh = GetComponent<MeshRenderer>();
-    }
-
     private void Update()
     {
         // Draws ray in scene editor just to visualize the raycasting
@@ -91,7 +81,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     target.Interact();
                 }
-                // If interact with Paint Can
+                // If interact with Sink
                 else if (target.tag == "Sink")
                 {
                     target.Interact();

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Sink : Interactable
 {
+    // Reference to what the brush originally is colored
     [SerializeReference]
     private Material origin_mat;
+    // Reference to brush's mesh renderer
     [SerializeReference]
     private Renderer brush_mesh;
 
@@ -18,6 +20,7 @@ public class Sink : Interactable
 
     void CleanBrush()
     {
+        // Only reset brush if its not its default color
         if (brush_mesh.material.color != origin_mat.color)
         {
             brush_mesh.material.color = origin_mat.color;
