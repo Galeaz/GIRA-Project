@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Counter
   - Item Spawner
+  - TrashCan
+  - Paint Bucket
+  - Sink
   layers:
   - Default
   - TransparentFX

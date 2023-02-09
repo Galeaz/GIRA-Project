@@ -20,6 +20,16 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private bool holding_item = false;
 
+    // Player's PaintBrush Color
+    // public Color player_color;
+    // Reference to Player's mesh renderer
+    //public MeshRenderer player_mesh;
+
+    private void Start()
+    {
+        //player_mesh = GetComponent<MeshRenderer>();
+    }
+
     private void Update()
     {
         // Draws ray in scene editor just to visualize the raycasting
@@ -68,6 +78,23 @@ public class PlayerInteraction : MonoBehaviour
                             item_held = player_grab_loc.GetChild(0);
                         }
                     }                  
+                }
+                // If interact with Trash Can
+                else if (target.tag == "TrashCan")
+                {
+                    target.Interact();
+                    holding_item = false;
+                    item_held = null;
+                }
+                // If interact with Paint Can
+                else if (target.tag == "Paint Bucket")
+                {
+                    target.Interact();
+                }
+                // If interact with Paint Can
+                else if (target.tag == "Sink")
+                {
+                    target.Interact();
                 }
                 else
                 {
