@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TestingMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     //singleton
-    public static TestingMenu instance;
+    public static PauseMenu instance;
 
     public GameObject restartButton;
     // Start is called before the first frame update
@@ -32,20 +32,8 @@ public class TestingMenu : MonoBehaviour
         Application.Quit(); //closes game
     }
 
-    public void RestartGame(int gamemode)
+    public void RestartGame()
     {
-        if (MainMenu.instance.gameMode == 1)
-        {
-            SceneManager.LoadScene("Singleplayer Game"); //re-opens singleplayer game
-        }
-        else if (MainMenu.instance.gameMode == 2)
-        {
-            SceneManager.LoadScene("Multiplayer Game"); //re-opens multiplayer game
-        }
-        else
-        {
-            print("ERROR: No game mode code recorded.");
-            SceneManager.LoadScene("MainMenu"); //in case for some error there is no game code kicks you out to the main menu
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

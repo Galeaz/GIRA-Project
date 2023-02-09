@@ -6,68 +6,87 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float playerSpeed = 15.0f;
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
-
-    // Dash
+    // Character Controller reference
+    [SerializeReference] private CharacterController controller;
+    
+    // Player speed variables
     public float activeMoveSpeed;
-    public float dashSpeed;
+    [SerializeField] private float normalSpeed = 15.0f;
+    [SerializeField] private float dashSpeed = 35.0f;
 
-    public float dashLength = 0.5f;
-    public float dashCooldown = 1f;
+    // Rotation Variables
+    private float turnSmoothTime = 0.06f;
+    private float turnSmoothVelocity;
 
-    public float dashCounter;
-    public float dashCooldownCounter;
+    // Dash Variables
+    [SerializeField] private float dashLength = 0.5f;
+    [SerializeField] private float dashCooldown = 1f;
+    // Dash Managing variables
+    private float dashCounter;
+    private float dashCooldownCounter;
 
     private void Start()
     {
-        activeMoveSpeed = playerSpeed;    
+        // Start set player's speed to default (normalSpeed)
+        activeMoveSpeed = normalSpeed;
+        Time.timeScale = 1f; //after pausing and reloading scene we need to make the player move again
+        
     }
 
     void Update()
     {
+        // Create Vector from player input
         Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
 
+        // Move and Rotate player
         if (move.magnitude >= 0.1f)
         {
+            // Smooth Rotation
             float target_angle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
+            // Move using character controller
             controller.Move(move * Time.deltaTime * activeMoveSpeed);
         }
 
+        // Filler Spot for Interaction Key
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E was pressed");
+            // Debug.Log("E was pressed");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (dashCooldownCounter <= 0 && dashCounter <= 0)
-            {
-                activeMoveSpeed = dashSpeed;
-                dashCounter = dashLength;
-            }
-        }
 
         if (Input.GetKeyDown(KeyCode.Alpha0)) //0 key to open Main Menu (not number pad)
         {
             SceneManager.LoadScene("TestingMenu");
         }
 
-        if (dashCounter > 0)
+        // If Dash key (space) is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            dashCounter -= Time.deltaTime;
-            if (dashCounter <= 0)
+            // If cooldown is 0 and is not already dashing
+            if (dashCooldownCounter <= 0 && dashCounter <= 0)
             {
-                activeMoveSpeed = playerSpeed;
-                dashCooldownCounter = dashLength;
+                // Increase speed
+                activeMoveSpeed = dashSpeed;
+                // Set counter for duration of dash
+                dashCounter = dashLength;
             }
         }
 
+        // Tick down the duration of Dash
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            // Reset Player speed to normal and set cooldown
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = normalSpeed;
+                dashCooldownCounter = dashCooldown;
+            }
+        }
+        // Tick down the cooldown counter
         if (dashCooldownCounter > 0)
         { dashCooldownCounter -= Time.deltaTime; }
     }
