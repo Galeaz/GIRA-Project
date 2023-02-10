@@ -89,6 +89,7 @@ public class PlayerInteraction : MonoBehaviour
                 else
                 {
                     // Do Nothing, Not sure if it needs to do anything when no interactable
+                    return;
                 }
             }
         }
