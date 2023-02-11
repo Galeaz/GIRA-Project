@@ -18,11 +18,13 @@ public class Ice : Prop
         parent = transform.parent;
         if (parent != null && parent.CompareTag("Player"))
         {
+            player = parent.GetComponentInParent<PlayerMovement>();
+            
             UpdateSpeed(speedModifier);
         }
         else
         {
-            //Debug.Log("Player is no longer holding."); JUST FOR TESTING
+            UpdateSpeed(15f);
         }
     }
     private void UpdateSpeed(float speed)

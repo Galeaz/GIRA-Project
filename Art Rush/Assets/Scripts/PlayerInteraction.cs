@@ -144,4 +144,9 @@ public class PlayerInteraction : MonoBehaviour
             target = null;
         }
     }
+    public void ClearHand()
+    {
+        holding_item = false;
+        item_held = null;
+    }
 }
