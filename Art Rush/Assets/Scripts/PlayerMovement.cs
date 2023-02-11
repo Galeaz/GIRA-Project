@@ -33,11 +33,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+
     void Update()
     {
         // Create Vector from player input
         Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-
         // Move and Rotate player
         if (move.magnitude >= 0.1f)
         {
@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
             float target_angle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
             // Move using character controller
             controller.Move(move * Time.deltaTime * activeMoveSpeed);
         }
@@ -89,5 +88,10 @@ public class PlayerMovement : MonoBehaviour
         // Tick down the cooldown counter
         if (dashCooldownCounter > 0)
         { dashCooldownCounter -= Time.deltaTime; }
+        
+    }
+    public void ChangeSpeed(float speed)
+    {
+        activeMoveSpeed = speed;
     }
 }

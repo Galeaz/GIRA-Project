@@ -41,6 +41,7 @@ public class PlayerInteraction : MonoBehaviour
                     target.Interact();
                     // item held stores the transform of the held item
                     item_held = player_grab_loc.GetChild(0);
+                    
                     holding_item = true;
                 }
                 // If interact with Item Counter
