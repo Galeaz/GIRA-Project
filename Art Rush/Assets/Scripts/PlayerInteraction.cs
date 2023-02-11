@@ -41,6 +41,7 @@ public class PlayerInteraction : MonoBehaviour
                     target.Interact();
                     // item held stores the transform of the held item
                     item_held = player_grab_loc.GetChild(0);
+                    
                     holding_item = true;
                 }
                 // If interact with Item Counter
@@ -89,6 +90,7 @@ public class PlayerInteraction : MonoBehaviour
                 else
                 {
                     // Do Nothing, Not sure if it needs to do anything when no interactable
+                    return;
                 }
             }
         }
@@ -141,5 +143,10 @@ public class PlayerInteraction : MonoBehaviour
             }
             target = null;
         }
+    }
+    public void ClearHand()
+    {
+        holding_item = false;
+        item_held = null;
     }
 }
