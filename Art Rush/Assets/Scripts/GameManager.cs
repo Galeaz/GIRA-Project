@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject Pause_Button;
     public GameObject Resume_Button;
 
+
     public void PauseGame()
     {
         Time.timeScale = 0;
@@ -16,5 +17,4 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-    
 }

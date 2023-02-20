@@ -6,7 +6,7 @@ using TMPro;
 public class CountDownTimer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startingTime = 10f; //time the level will have
+    float startingTime = 90f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
     
     public Behaviour timeOutCanvas;
