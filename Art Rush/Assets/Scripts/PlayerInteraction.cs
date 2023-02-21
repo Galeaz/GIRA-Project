@@ -4,7 +4,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     // Info for raycasting
     private Ray ray;
-    private float max_dist = 2f;
+    private float max_dist = 4f;
     private RaycastHit hit;
     [SerializeField] LayerMask layers_to_hit;
     // Stores what the previous interaction key "interacted with"
@@ -86,6 +86,34 @@ public class PlayerInteraction : MonoBehaviour
                 else if (target.tag == "Sink")
                 {
                     target.Interact();
+                }
+
+                else if (target.tag == "Customer")
+                {
+                    //Debug.Log("Hit Customer");
+                    //target.Interact();
+                    // If already holding an item
+                    if (holding_item == true)
+                    {
+                        target.Interact();
+                        // If after the interact we see we aren't holding anything that means we placed the item on the counter
+                        if (player_grab_loc.childCount == 0)
+                        {
+                            holding_item = false;
+                            item_held = null;
+                        }
+                    }
+                    // If holding NO item
+                    else
+                    {
+                        target.Interact();
+                        // If after the interact we see we ARE holding something that means we picked something up
+                        if (player_grab_loc.childCount != 0)
+                        {
+                            holding_item = true;
+                            item_held = player_grab_loc.GetChild(0);
+                        }
+                    }
                 }
                 else
                 {

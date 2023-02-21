@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1821275344}
   m_Layer: 0
   m_Name: GrabLocation
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 6983832260269437996}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6983832260807176627}
-  activeMoveSpeed: 0
+  activeMoveSpeed: 1.5
   normalSpeed: 15
   dashSpeed: 50
   dashLength: 0.3
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers_to_hit:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   target: {fileID: 0}
   player_grab_loc: {fileID: 1821275344}
   item_held: {fileID: 0}
