@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PauseGame(); //starts with game paused to avoid player from moving
-        StartCoroutine(ShowBannerAndContinue(3f)); //will disable start canvas banner after specified time
+        StartCoroutine(ShowBannerAndContinue(2f)); //will disable start canvas banner after specified time
     }
 
     private IEnumerator ShowBannerAndContinue(float waitTime)
