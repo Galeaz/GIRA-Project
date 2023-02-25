@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountDownTimer : MonoBehaviour
 {
+
     float currentTime = 0f;
     float startingTime = 90f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
@@ -63,11 +65,18 @@ public class CountDownTimer : MonoBehaviour
 
     void endGame()
     {
-        Time.timeScale = 0;
         timeOutCanvas.enabled = true; //shows finish match banner
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
 
-        //ADD COUROUTINE FOR CHANGE OF SCREEN
+        StartCoroutine(WaitAndContinue("MainMenu", 3f)); //will change scene after specified time
+    }
+
+    private IEnumerator WaitAndContinue(string sceneName, float waitTime)
+    {
+        Time.timeScale = 0; //pauses game
+        yield return new WaitForSecondsRealtime(waitTime); //will wait to change scene
+
+        SceneManager.LoadScene(sceneName); //loads scene
     }
 }
