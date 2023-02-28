@@ -10,9 +10,7 @@ public class ItemSpawner : Interactable
     // Reference to where to spawn props
     [SerializeReference]
     private Transform spawn_loc;
-    // Reference of where to move object when item is spawned
-    [SerializeReference]
-    private Transform player_grab_loc;
+    
 
     public override void Interact()
     {
@@ -24,6 +22,7 @@ public class ItemSpawner : Interactable
 
     void SpawnProp()
     {
+        
         // Creat a new instance of the prop
         GameObject new_prop = Instantiate(toSpawnProp, spawn_loc.position, spawn_loc.rotation);
         // Make it Immobile (I think this can be removed later as we aren't using it rigidbody for anything)

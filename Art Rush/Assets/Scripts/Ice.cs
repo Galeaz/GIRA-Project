@@ -15,7 +15,7 @@ public class Ice : Prop
     // Some way to check when the player is holding the object. While holding, increase their speed in PlayerMovement
     private void Update()
     {
-        parent = transform.parent;
+        parent = transform.parent.parent;
         if (parent != null && parent.CompareTag("Player"))
         {
             player = parent.GetComponentInParent<PlayerMovement>();
