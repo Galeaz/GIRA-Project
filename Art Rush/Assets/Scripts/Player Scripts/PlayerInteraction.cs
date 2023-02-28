@@ -13,12 +13,17 @@ public class PlayerInteraction : MonoBehaviour
     // Location for objects to go when picked up
     [SerializeReference]
     private Transform player_grab_loc;
+
+    [SerializeReference]
+    private Transform brush;
     // Stores the item the player is holding by reference to the transform
     [SerializeField] 
     public Transform item_held;
     // Keeps track if Item is held or not
     [SerializeField]
     private bool holding_item = false;
+
+    public Color current_color;
 
     private void Update()
     {
@@ -81,17 +86,18 @@ public class PlayerInteraction : MonoBehaviour
                 else if (target.tag == "Paint Bucket")
                 {
                     target.Interact();
+                    current_color = brush.GetChild(0).GetComponent<MeshRenderer>().material.color;
+
                 }
                 // If interact with Sink
                 else if (target.tag == "Sink")
                 {
                     target.Interact();
+                    current_color = brush.GetChild(0).GetComponent<MeshRenderer>().material.color;
                 }
 
                 else if (target.tag == "Customer")
                 {
-                    //Debug.Log("Hit Customer");
-                    //target.Interact();
                     // If already holding an item
                     if (holding_item == true)
                     {
@@ -122,6 +128,15 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
+
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("Q pressed");
+            if (item_held != null)
+            {
+                item_held.GetComponent<MeshRenderer>().material.color = current_color;
+            }
+        }
     }
 
     // Perform a raycast in front of the player for a short distance
@@ -133,7 +148,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, max_dist, layers_to_hit))
         {
             // Print out what was hit
-            Debug.Log(hit.collider.gameObject.name + " was hit");
+            // Debug.Log(hit.collider.gameObject.name + " was hit");
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
             // Do only if the object hit was an Interactable

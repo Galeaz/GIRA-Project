@@ -33,4 +33,23 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1; //resumes game
     }
+
+    public List<Seats> findSeats()
+    {
+        List<GameObject> all_seats = new List<GameObject>(GameObject.FindGameObjectsWithTag("Seat"));
+        List<Seats> available_seats = new List<Seats>();
+
+        foreach(GameObject seat in all_seats)
+        {
+            Seats s = seat.GetComponent<Seats>();
+            if (s.getAvailability() == true)
+            {
+                available_seats.Add(s);
+
+            }
+        }
+
+        // return available_seats;
+        return available_seats;
+    }
 }

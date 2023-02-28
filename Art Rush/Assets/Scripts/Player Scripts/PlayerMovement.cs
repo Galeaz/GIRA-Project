@@ -93,6 +93,6 @@ public class PlayerMovement : MonoBehaviour
     public void ChangeSpeed(float speed)
     {
         activeMoveSpeed = speed;
-        Debug.Log(activeMoveSpeed);
+        // Debug.Log(activeMoveSpeed);
     }
 }

@@ -6,7 +6,7 @@ public class PaintCans : Interactable
 {
     // Color of the Paint can Instance
     [SerializeField]
-    private Color my_color;
+    private Material my_color;
     private MeshRenderer my_mesh;
 
     // Original Color of Brush (ie default)
@@ -20,7 +20,7 @@ public class PaintCans : Interactable
     {
         // Change bucket color on start since each paint bucket is different
         my_mesh = GetComponent<MeshRenderer>();
-        my_mesh.material.color = my_color;
+        my_mesh.material.color = my_color.color;
     }
     public override void Interact()
     {
@@ -33,6 +33,6 @@ public class PaintCans : Interactable
     {
         // Only change color if the brush is "washed", not a color besides its default
         if (brush_mesh.material.color == origin_mat.color)
-        { brush_mesh.material.color = my_color; }
+        { brush_mesh.material.color = my_color.color; }
     }
 }

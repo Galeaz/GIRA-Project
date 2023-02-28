@@ -466,5 +466,6 @@ MonoBehaviour:
     m_Bits: 192
   target: {fileID: 0}
   player_grab_loc: {fileID: 1821275344}
+  brush: {fileID: 657945387}
   item_held: {fileID: 0}
   holding_item: 0

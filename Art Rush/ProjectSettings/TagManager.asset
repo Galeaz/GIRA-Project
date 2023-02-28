@@ -10,6 +10,14 @@ TagManager:
   - Paint Bucket
   - Sink
   - Customer
+  - Seat
+  - Exit
+  - Candle
+  - Prop_1
+  - Prop_2
+  - Ice
+  - Vase
+  - GameStateManager
   layers:
   - Default
   - TransparentFX
