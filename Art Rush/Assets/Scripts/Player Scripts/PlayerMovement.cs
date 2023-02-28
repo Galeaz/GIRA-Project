@@ -8,6 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     // Character Controller reference
     [SerializeReference] private CharacterController controller;
+
+    //Used for the multiplayer controls, want different key presses to only affect one player not both
+    [SerializeField]
+    private int playerNumber;
+    public string playerDash;
     
     // Player speed variables
     public float activeMoveSpeed;
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // Start set player's speed to default (normalSpeed)
         activeMoveSpeed = normalSpeed;
         Time.timeScale = 1f; //after pausing and reloading scene we need to make the player move again
+        playerDash = "Dash" + playerNumber;
         
     }
 
@@ -37,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Create Vector from player input
-        Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"+playerNumber), 0f, Input.GetAxisRaw("Vertical"+playerNumber)).normalized;
         // Move and Rotate player
         if (move.magnitude >= 0.1f)
         {
@@ -62,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // If Dash key (space) is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown(playerDash))
         {
             // If cooldown is 0 and is not already dashing
             if (dashCooldownCounter <= 0 && dashCounter <= 0)

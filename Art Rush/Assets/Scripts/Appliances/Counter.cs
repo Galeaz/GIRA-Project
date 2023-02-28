@@ -10,9 +10,7 @@ public class Counter : Interactable
     // Location where props are held
     [SerializeReference]
     private Transform spawn_loc;
-    // Reference to player's grab area
-    [SerializeReference]
-    private Transform player_grab_loc;
+    
 
     // Boolean to tell if Counter already has an item
     private bool is_holding;

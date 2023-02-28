@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class TrashCan : Interactable
 {
-    // Reference to player's grab area
-    [SerializeReference]
-    private Transform player_grab_loc;
-
     public override void Interact()
     {
         base.Interact();
