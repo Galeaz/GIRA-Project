@@ -8,6 +8,8 @@ public class PaintCans : Interactable
     // Color of the Paint can Instance
     [SerializeField]
     private Color my_color;
+    [SerializeField]
+    private Material my_mat;
     private MeshRenderer my_mesh;
 
     // Original Color of Brush (ie default)
@@ -24,6 +26,7 @@ public class PaintCans : Interactable
     {
         // Change bucket color on start since each paint bucket is different
         my_mesh = GetComponent<MeshRenderer>();
+        my_color = my_mat.color;
         my_mesh.material.color = my_color;
         my_color.a = 1;
     }
