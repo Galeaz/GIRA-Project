@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sink : Interactable
 {
@@ -10,6 +11,9 @@ public class Sink : Interactable
     // Reference to brush's mesh renderer
     [SerializeReference]
     private Renderer brush_mesh;
+
+    [SerializeReference]
+    private Graphic color_indicator;
 
     public override void Interact()
     {
@@ -24,6 +28,7 @@ public class Sink : Interactable
         if (brush_mesh.material.color != origin_mat.color)
         {
             brush_mesh.material.color = origin_mat.color;
+            color_indicator.color = new Color32(212, 173, 138, 255);
         }
     }
 }

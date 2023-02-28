@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PaintCans : Interactable
 {
     // Color of the Paint can Instance
     [SerializeField]
-    private Material my_color;
+    private Color my_color;
     private MeshRenderer my_mesh;
 
     // Original Color of Brush (ie default)
@@ -16,11 +17,15 @@ public class PaintCans : Interactable
     [SerializeReference]
     private Renderer brush_mesh;
 
+    [SerializeReference]
+    private Graphic color_indicator;
+
     private void Start()
     {
         // Change bucket color on start since each paint bucket is different
         my_mesh = GetComponent<MeshRenderer>();
-        my_mesh.material.color = my_color.color;
+        color_indicator = GetComponent<Graphic>();
+        my_mesh.material.color = my_color;
     }
     public override void Interact()
     {
@@ -33,6 +38,6 @@ public class PaintCans : Interactable
     {
         // Only change color if the brush is "washed", not a color besides its default
         if (brush_mesh.material.color == origin_mat.color)
-        { brush_mesh.material.color = my_color.color; }
+        { brush_mesh.material.color = my_color; color_indicator.color = my_color; }
     }
 }
