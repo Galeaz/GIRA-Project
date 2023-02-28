@@ -151,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 47011256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7577395, y: 4.5130754, z: 4.7577395}
+  m_LocalScale: {x: 4.7577395, y: 4.7577395, z: 4.7577395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 594279489}
@@ -420,7 +420,7 @@ RectTransform:
   m_GameObject: {fileID: 203605332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.78918934, y: 1.1369807, z: 0.63772875}
+  m_LocalScale: {x: 0.5156415, y: 0.6135944, z: 0.41668}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1189696749}
@@ -433,13 +433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: -130}
   m_SizeDelta: {x: 2036.2, y: 950}
-=======
-  m_AnchoredPosition: {x: 0.0000047683716, y: -141}
-  m_SizeDelta: {x: 1760.5183, y: 551.04785}
->>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203605334
 MonoBehaviour:
@@ -523,11 +518,7 @@ RectTransform:
   m_GameObject: {fileID: 416947753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
   m_LocalScale: {x: 10.93, y: 10.93, z: 10.93}
-=======
-  m_LocalScale: {x: 9.878329, y: 9.878329, z: 9.878329}
->>>>>>> Stashed changes
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 443541705}
@@ -535,11 +526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: -189.39}
-=======
-  m_AnchoredPosition: {x: 0, y: -195}
->>>>>>> Stashed changes
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416947755
@@ -1078,7 +1065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3.4}
+  m_AnchoredPosition: {x: 0, y: -2.0000038}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594279490
@@ -1128,13 +1115,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< Updated upstream
   m_fontSize: 18.4
   m_fontSizeBase: 18.4
-=======
-  m_fontSize: 16.6
-  m_fontSizeBase: 16.6
->>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1554,13 +1536,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< Updated upstream
   m_fontSize: 18.4
   m_fontSizeBase: 18.4
-=======
-  m_fontSize: 15.4
-  m_fontSizeBase: 15.4
->>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1933,13 +1910,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< Updated upstream
   m_fontSize: 14.7
   m_fontSizeBase: 14.7
-=======
-  m_fontSize: 14.47
-  m_fontSizeBase: 14.47
->>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2110,13 +2082,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< Updated upstream
   m_fontSize: 18.4
   m_fontSizeBase: 18.4
-=======
-  m_fontSize: 13.52
-  m_fontSizeBase: 13.52
->>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2125,7 +2092,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -0.71
+  m_characterSpacing: 5.23
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2484,13 +2451,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< Updated upstream
   m_fontSize: 15.4
   m_fontSizeBase: 15.4
-=======
-  m_fontSize: 15.2
-  m_fontSizeBase: 15.2
->>>>>>> Stashed changes
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2702,7 +2664,7 @@ RectTransform:
   m_GameObject: {fileID: 1075109515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7577395, y: 4.5130754, z: 4.7577395}
+  m_LocalScale: {x: 4.7577395, y: 4.7577395, z: 4.7577395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 755827657}
@@ -3014,7 +2976,7 @@ RectTransform:
   m_GameObject: {fileID: 1189696748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7577395, y: 4.5130754, z: 4.7577395}
+  m_LocalScale: {x: 4.7577395, y: 4.7577395, z: 4.7577395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 881428742}
@@ -3373,7 +3335,7 @@ RectTransform:
   m_GameObject: {fileID: 1424576900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7577395, y: 4.5130754, z: 4.7577395}
+  m_LocalScale: {x: 4.7577395, y: 4.7577395, z: 4.7577395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1021424438}
@@ -3600,7 +3562,7 @@ RectTransform:
   m_GameObject: {fileID: 1494026190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0674112, y: 1.604885, z: 2.7571733}
+  m_LocalScale: {x: 19.219883, y: 11.187436, z: 19.219883}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 443541705}
@@ -4242,7 +4204,7 @@ RectTransform:
   m_GameObject: {fileID: 2131909838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.5844436, y: 4.853361, z: 4.7577395}
+  m_LocalScale: {x: 4.7577395, y: 4.7577395, z: 4.7577395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 908278161}
@@ -4251,13 +4213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 0, y: -294}
   m_SizeDelta: {x: 160, y: 30}
-=======
-  m_AnchoredPosition: {x: 0, y: -180}
-  m_SizeDelta: {x: 73.5447, y: 26.9409}
->>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131909840
 MonoBehaviour:
