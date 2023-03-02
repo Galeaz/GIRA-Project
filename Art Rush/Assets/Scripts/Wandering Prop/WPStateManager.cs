@@ -13,6 +13,8 @@ public class WPStateManager : MonoBehaviour
     [SerializeReference]
     private NavMeshAgent agent;
 
+    private float lifetime = 10f;
+
     // Start is called before the first frame update
     void Start()    
     {
@@ -24,7 +26,15 @@ public class WPStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        current_state.UpdateState(this, agent);
+        if (lifetime > 0)
+        {
+            lifetime -= Time.deltaTime;
+            current_state.UpdateState(this, agent);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SwitchState(WPBaseState new_state)

@@ -10,6 +10,7 @@ public class WP_Idle : WPBaseState
     public override void EnterState(WPStateManager wp_manager, NavMeshAgent agent)
     {
         Debug.Log("In IDLE state");
+        agent.SetDestination(wp_manager.gameObject.transform.position);
     }
 
     public override void UpdateState(WPStateManager wp_manager, NavMeshAgent agent)
@@ -34,8 +35,9 @@ public class WP_Idle : WPBaseState
 
     bool PlayerInRange(WPStateManager wp_manager, Transform player)
     {
-        bool ret_val = Vector3.Distance(wp_manager.gameObject.transform.position, player.position) < 5;
+        bool ret_val = Vector3.Distance(wp_manager.gameObject.transform.position, player.position) < 10;
         // Debug.Log(ret_val);
         return ret_val;
+        // return false;
     }
 }

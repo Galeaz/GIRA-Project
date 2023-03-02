@@ -20,6 +20,7 @@ public class WP_Wander : WPBaseState
         Debug.Log("In WANDER state");
         wander_time = 5.0f;
         wander_target = Vector3.zero;
+        agent.SetDestination(wp_manager.gameObject.transform.position);
     }
 
     public override void UpdateState(WPStateManager wp_manager, NavMeshAgent agent)
@@ -41,7 +42,6 @@ public class WP_Wander : WPBaseState
             Vector3 targetLocal = wander_target + new Vector3(0, 0, wanderDistance);
             Vector3 targetWorld = wp_manager.gameObject.transform.InverseTransformVector(targetLocal);
 
-            // Debug.Log(targetWorld);
             agent.SetDestination(targetWorld);
         }
         // If we are done idling
@@ -53,8 +53,9 @@ public class WP_Wander : WPBaseState
 
     bool PlayerInRange(WPStateManager wp_manager, Transform player)
     {
-        bool ret_val = Vector3.Distance(wp_manager.gameObject.transform.position, player.position) < 5;
+        bool ret_val = Vector3.Distance(wp_manager.gameObject.transform.position, player.position) < 10;
         // Debug.Log(ret_val);
         return ret_val;
+        // return false;
     }
 }

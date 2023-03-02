@@ -18,6 +18,7 @@ TagManager:
   - Ice
   - Vase
   - GameStateManager
+  - WanderingProp
   layers:
   - Default
   - TransparentFX
