@@ -139,7 +139,6 @@ public class Customer : Interactable
     void SetNewTargetLocation()
     {
         List<Seats> possible_seats = findSeats();
-        // Debug.Log(possible_seats);
         if (possible_seats.Count != 0)
         {
             target_loc = possible_seats[0].GetComponentInChildren<Transform>().transform;
