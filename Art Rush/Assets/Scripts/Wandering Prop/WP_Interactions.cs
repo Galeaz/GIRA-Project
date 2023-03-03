@@ -9,7 +9,7 @@ public class WP_Interactions : Interactable
     public override void Interact()
     {
         base.Interact();
-        // If there is an object in the players grab area, destroy it
+        // Once interacted with add to score and, destroy itself
         gsm.addToScore(100);
         Destroy(gameObject);
     }
@@ -17,12 +17,7 @@ public class WP_Interactions : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        // Get the Gamestatemanager
         gsm = GameObject.FindGameObjectWithTag("GameStateManager").GetComponent<GameStateManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

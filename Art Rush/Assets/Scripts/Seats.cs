@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class Seats : MonoBehaviour
 {
+    // Track is Seat object is taken by a customer
     public bool isAvailable = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Get and Set for isAvailable
     public bool getAvailability()
     {
         return isAvailable;

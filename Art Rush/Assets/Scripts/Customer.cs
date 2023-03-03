@@ -40,12 +40,7 @@ public class Customer : Interactable
     public Prop wanted_prop;
 
     private float wait_time = 0.0f;
-    /* Ideas for variables
-        - order
-        - wait time
-        - order is complete?
-        -       
-    */
+    
     public override void Interact()
     {
         base.Interact();
@@ -149,11 +144,12 @@ public class Customer : Interactable
         }
     }
 
+    // Set Functions for wanted_color and wanted_prop
     public void setWantedColor(Color col)
     {
         wanted_color = col;
     }
-
+   
     public void setWantedProp(Prop p)
     {
         wanted_prop = p;

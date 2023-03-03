@@ -95,7 +95,7 @@ public class PlayerInteraction : MonoBehaviour
                     target.Interact();
                     current_color = brush.GetChild(0).GetComponent<MeshRenderer>().material.color;
                 }
-
+                // If interact with Customer
                 else if (target.tag == "Customer")
                 {
                     // If already holding an item
@@ -121,9 +121,9 @@ public class PlayerInteraction : MonoBehaviour
                         }
                     }
                 }
+                // If interact with Wandering Prop
                 else if (target.tag == "WanderingProp")
                 {
-                    Debug.Log("WP interact");
                     target.Interact();
                 }
                 else
