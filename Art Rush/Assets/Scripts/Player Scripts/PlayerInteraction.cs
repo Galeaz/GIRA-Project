@@ -121,6 +121,11 @@ public class PlayerInteraction : MonoBehaviour
                         }
                     }
                 }
+                else if (target.tag == "WanderingProp")
+                {
+                    Debug.Log("WP interact");
+                    target.Interact();
+                }
                 else
                 {
                     // Do Nothing, Not sure if it needs to do anything when no interactable
@@ -148,7 +153,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, max_dist, layers_to_hit))
         {
             // Print out what was hit
-            // Debug.Log(hit.collider.gameObject.name + " was hit");
+            Debug.Log(hit.collider.gameObject.name + " was hit");
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
             // Do only if the object hit was an Interactable

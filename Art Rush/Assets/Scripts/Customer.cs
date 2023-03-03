@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class Customer : Interactable
 {
     // Reference to player's grab area
-    [SerializeReference]
-    private Transform player_grab_loc;
+    // [SerializeReference]
+    //private Transform player_grab_loc;
     // Location where props are held
     [SerializeReference]
     private Transform customer_hold_loc;
@@ -139,7 +139,6 @@ public class Customer : Interactable
     void SetNewTargetLocation()
     {
         List<Seats> possible_seats = findSeats();
-        // Debug.Log(possible_seats);
         if (possible_seats.Count != 0)
         {
             target_loc = possible_seats[0].GetComponentInChildren<Transform>().transform;
