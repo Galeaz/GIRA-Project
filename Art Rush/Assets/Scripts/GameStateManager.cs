@@ -1,21 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int total_score = 0;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] 
+    TextMeshProUGUI scoreText; //text to display the score
 
     public List<Seats> findSeats()
     {
@@ -45,5 +39,6 @@ public class GameStateManager : MonoBehaviour
     public void addToScore(float score)
     {
         total_score += Mathf.FloorToInt(score);
+        scoreText.text = total_score.ToString(); // change tex in UI for score display
     }
 }
