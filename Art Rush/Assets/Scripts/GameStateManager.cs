@@ -5,21 +5,23 @@ using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
-    // Game Score Tracker
+    // Start is called before the first frame update
     public int total_score = 0;
 
-    [SerializeField] 
-    TextMeshProUGUI scoreText; //text to display the score
+    //create the variable for score required to win ------------------------------------------------------
 
-    // Function to return all available seats in the game
+    [SerializeField] 
+    TextMeshProUGUI scoreTextGame; //text to display the score in game UI
+    [SerializeField]
+    TextMeshProUGUI scoreTextWin; //text to display the score in win screen
+    [SerializeField]
+    TextMeshProUGUI scoreTextLose; //text to display the score in lose screen
+
     public List<Seats> findSeats()
     {
-        // Get all Seat tagged objects
         List<GameObject> all_seats = new List<GameObject>(GameObject.FindGameObjectsWithTag("Seat"));
-        // Create return list of available seat objects
         List<Seats> available_seats = new List<Seats>();
 
-        // For all seats in the game if it is available add it into the return list
         foreach (GameObject seat in all_seats)
         {
             Seats s = seat.GetComponent<Seats>();
@@ -29,21 +31,23 @@ public class GameStateManager : MonoBehaviour
 
             }
         }
+
         // return available_seats;
         return available_seats;
     }
 
-    // Function to return number of customers in the game
     public int numCustomers()
     {
         List<GameObject> all_customers = new List<GameObject>(GameObject.FindGameObjectsWithTag("Customer"));
         return all_customers.Count;
     }
 
-    // Function to increase score
-    public void addToScore(float score)
+    public int addToScore(float score)
     {
         total_score += Mathf.FloorToInt(score);
-        scoreText.text = total_score.ToString(); // change tex in UI for score display
+        scoreTextGame.text = total_score.ToString(); // change text in UI for score display
+        scoreTextLose.text = total_score.ToString(); // change text in win screen
+        scoreTextWin.text = total_score.ToString(); // change text in lose screen
+        return total_score;
     }
 }

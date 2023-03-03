@@ -444,6 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6983832260807176627}
+  playerNumber: 0
+  playerDash: 
   activeMoveSpeed: 1.5
   normalSpeed: 15
   dashSpeed: 50
@@ -469,3 +471,4 @@ MonoBehaviour:
   brush: {fileID: 657945387}
   item_held: {fileID: 0}
   holding_item: 0
+  current_color: {r: 0, g: 0, b: 0, a: 0}
