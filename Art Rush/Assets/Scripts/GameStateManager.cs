@@ -8,8 +8,14 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     public int total_score = 0;
 
+    //create the variable for score required to win ------------------------------------------------------
+
     [SerializeField] 
-    TextMeshProUGUI scoreText; //text to display the score
+    TextMeshProUGUI scoreTextGame; //text to display the score in game UI
+    [SerializeField]
+    TextMeshProUGUI scoreTextWin; //text to display the score in win screen
+    [SerializeField]
+    TextMeshProUGUI scoreTextLose; //text to display the score in lose screen
 
     public List<Seats> findSeats()
     {
@@ -36,9 +42,12 @@ public class GameStateManager : MonoBehaviour
         return all_customers.Count;
     }
 
-    public void addToScore(float score)
+    public int addToScore(float score)
     {
         total_score += Mathf.FloorToInt(score);
-        scoreText.text = total_score.ToString(); // change tex in UI for score display
+        scoreTextGame.text = total_score.ToString(); // change text in UI for score display
+        scoreTextLose.text = total_score.ToString(); // change text in win screen
+        scoreTextWin.text = total_score.ToString(); // change text in lose screen
+        return total_score;
     }
 }

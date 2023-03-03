@@ -8,17 +8,19 @@ public class CountDownTimer : MonoBehaviour
 {
 
     float currentTime = 0f;
-    float startingTime = 90f; //time the level will have
+    float startingTime = 5f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
     
-    public Behaviour timeOutCanvas;
-    public AudioSource finishAudio;
+    public Behaviour timeOutCanvas; //finish banner canvas
+    public Behaviour winCanvas; //win screen canvas
+    public Behaviour loseCanvas; //lose screen canvas
+    public AudioSource finishAudio; //audio indicator of level end
 
     [SerializeField] TextMeshProUGUI countTimeText; //time text object
 
     void Start()
     {
-        currentTime = startingTime;
+        currentTime = startingTime; //set level time
     }
 
     // Update is called once per frame
@@ -69,12 +71,28 @@ public class CountDownTimer : MonoBehaviour
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
 
-        StartCoroutine(WaitAndContinue("MainMenu", 3f)); //will change scene after specified time
+        StartCoroutine(WaitAndContinue(4f, 200, 200)); //will show finish banner with specified time
+        //--------------------------- GET SCORE AND REQUIRED SCORE FROM GAME SATE MANAGER FOR LINE 74 (PREVIOUS LINE)
     }
 
-    private IEnumerator WaitAndContinue(string sceneName, float waitTime)
+    private IEnumerator WaitAndContinue(float waitTime, int score, int requiredScore)
     {
         Time.timeScale = 0; //pauses game
+        yield return new WaitForSecondsRealtime(waitTime); //will wait to call function that shows canvas
+
+        StartCoroutine(showScoreScreen("MainMenu", 5f, score, requiredScore)); //call win or lose function to show canvas with coroutine
+    }
+
+    private IEnumerator showScoreScreen(string sceneName, float waitTime, int score, int requiredScore)
+    {
+        if (score >= requiredScore)
+        {
+            winCanvas.enabled = true;
+        }
+        else
+        {
+            loseCanvas.enabled = true;
+        }
         yield return new WaitForSecondsRealtime(waitTime); //will wait to change scene
 
         SceneManager.LoadScene(sceneName); //loads scene
