@@ -5,6 +5,7 @@ using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
+
     // Start is called before the first frame update
     public int total_score = 0;
 
@@ -16,6 +17,11 @@ public class GameStateManager : MonoBehaviour
     TextMeshProUGUI scoreTextWin; //text to display the score in win screen
     [SerializeField]
     TextMeshProUGUI scoreTextLose; //text to display the score in lose screen
+
+    public int GetScore()
+    {
+        return total_score;
+    }
 
     public List<Seats> findSeats()
     {
@@ -42,12 +48,11 @@ public class GameStateManager : MonoBehaviour
         return all_customers.Count;
     }
 
-    public int addToScore(float score)
+    public void addToScore(float score)
     {
         total_score += Mathf.FloorToInt(score);
         scoreTextGame.text = total_score.ToString(); // change text in UI for score display
         scoreTextLose.text = total_score.ToString(); // change text in win screen
         scoreTextWin.text = total_score.ToString(); // change text in lose screen
-        return total_score;
     }
 }

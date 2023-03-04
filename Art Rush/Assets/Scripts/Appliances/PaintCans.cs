@@ -19,9 +19,6 @@ public class PaintCans : Interactable
     [SerializeReference]
     private Renderer brush_mesh;
 
-    [SerializeField]
-    private Graphic color_indicator;
-
     private void Start()
     {
         // Change bucket color on start since each paint bucket is different
@@ -41,6 +38,6 @@ public class PaintCans : Interactable
     {
         // Only change color if the brush is "washed", not a color besides its default
         if (brush_mesh.material.color == origin_mat.color)
-        { brush_mesh.material.color = my_color; color_indicator.color = my_color;  }
+        { brush_mesh.material.color = my_color; }
     }
 }

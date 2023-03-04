@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CountDownTimer : MonoBehaviour
 {
+    private GameStateManager GSM_instance;
 
     float currentTime = 0f;
-    float startingTime = 5f; //time the level will have
+    float startingTime = 60f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
     
     public Behaviour timeOutCanvas; //finish banner canvas
@@ -21,6 +22,7 @@ public class CountDownTimer : MonoBehaviour
     void Start()
     {
         currentTime = startingTime; //set level time
+        GSM_instance = new GameStateManager();
     }
 
     // Update is called once per frame
@@ -70,9 +72,7 @@ public class CountDownTimer : MonoBehaviour
         timeOutCanvas.enabled = true; //shows finish match banner
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
-
-        StartCoroutine(WaitAndContinue(4f, 100, 200)); //will show finish banner with specified time
-        //--------------------------- GET SCORE AND REQUIRED SCORE FROM GAME SATE MANAGER FOR LINE 74 (PREVIOUS LINE)
+        StartCoroutine(WaitAndContinue(4f, GSM_instance.GetScore(), 200)); //will show finish banner with specified time
     }
 
     private IEnumerator WaitAndContinue(float waitTime, int score, int requiredScore)

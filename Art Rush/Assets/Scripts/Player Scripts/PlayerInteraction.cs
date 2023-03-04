@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerInteraction : MonoBehaviour
     private bool holding_item = false;
 
     public Color current_color;
+
+    [SerializeField]
+    private Graphic color_indicator; //UI brush color indicator
+
 
     private void Update()
     {
@@ -87,7 +92,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     target.Interact();
                     current_color = brush.GetChild(0).GetComponent<MeshRenderer>().material.color;
-
+                    color_indicator.color = current_color; //changing UI color
                 }
                 // If interact with Sink
                 else if (target.tag == "Sink")
