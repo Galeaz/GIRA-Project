@@ -3808,6 +3808,7 @@ MonoBehaviour:
   loseCanvas: {fileID: 87580411}
   finishAudio: {fileID: 767779732}
   countTimeText: {fileID: 151751278}
+  scoreTextGame: {fileID: 686054788}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
