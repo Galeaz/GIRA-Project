@@ -17,6 +17,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private int playerNum;
     private string playerInteract;
+    private string playerPaint;
 
     [SerializeReference]
     private Transform brush;
@@ -31,7 +32,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        playerInteract = "Interact" + playerNum; 
+        playerInteract = "Interact" + playerNum;
+        playerPaint = "Paint" + playerNum; 
     }
 
     private void Update()
@@ -143,9 +145,9 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetButtonDown(playerPaint))
         {
-            Debug.Log("Q pressed");
+            
             if (item_held != null)
             {
                 item_held.GetComponent<MeshRenderer>().material.color = current_color;
