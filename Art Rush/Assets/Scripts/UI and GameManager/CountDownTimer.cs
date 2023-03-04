@@ -71,7 +71,7 @@ public class CountDownTimer : MonoBehaviour
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
 
-        StartCoroutine(WaitAndContinue(4f, 200, 200)); //will show finish banner with specified time
+        StartCoroutine(WaitAndContinue(4f, 100, 200)); //will show finish banner with specified time
         //--------------------------- GET SCORE AND REQUIRED SCORE FROM GAME SATE MANAGER FOR LINE 74 (PREVIOUS LINE)
     }
 
