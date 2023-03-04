@@ -14,6 +14,10 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeReference]
     private Transform player_grab_loc;
 
+    [SerializeField]
+    private int playerNum;
+    private string playerInteract;
+
     [SerializeReference]
     private Transform brush;
     // Stores the item the player is holding by reference to the transform
@@ -25,13 +29,18 @@ public class PlayerInteraction : MonoBehaviour
 
     public Color current_color;
 
+    private void Start()
+    {
+        playerInteract = "Interact" + playerNum; 
+    }
+
     private void Update()
     {
         // Draws ray in scene editor just to visualize the raycasting
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
         // If player presses the Interact "E" key
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown(playerInteract))
         {
             // Do a raycast in front of player
             checkRayCastInFront();
