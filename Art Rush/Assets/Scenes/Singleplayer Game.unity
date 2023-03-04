@@ -4427,6 +4427,14 @@ PrefabInstance:
       propertyPath: player_grab_loc
       value: 
       objectReference: {fileID: 1821275344}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P1
+      value: 
+      objectReference: {fileID: 1368873971}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P2
+      value: 
+      objectReference: {fileID: 1368873971}
     - target: {fileID: 6293105515355002973, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -7233,6 +7241,14 @@ PrefabInstance:
       propertyPath: player_grab_loc
       value: 
       objectReference: {fileID: 1821275344}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P1
+      value: 
+      objectReference: {fileID: 1368873971}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P2
+      value: 
+      objectReference: {fileID: 1368873971}
     - target: {fileID: 6293105515355002973, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -8975,6 +8991,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
       propertyPath: color_indicator
+      value: 
+      objectReference: {fileID: 1368873971}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P1
+      value: 
+      objectReference: {fileID: 1368873971}
+    - target: {fileID: 6293105515355002972, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
+      propertyPath: color_indicator_P2
       value: 
       objectReference: {fileID: 1368873971}
     - target: {fileID: 6293105515355002973, guid: 82d402f355d78124d933b9dcd68903d4, type: 3}
