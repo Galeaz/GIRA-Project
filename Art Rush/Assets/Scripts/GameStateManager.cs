@@ -9,19 +9,12 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     public int total_score = 0;
 
-    //create the variable for score required to win ------------------------------------------------------
-
     [SerializeField] 
     TextMeshProUGUI scoreTextGame; //text to display the score in game UI
     [SerializeField]
     TextMeshProUGUI scoreTextWin; //text to display the score in win screen
     [SerializeField]
     TextMeshProUGUI scoreTextLose; //text to display the score in lose screen
-
-    public int GetScore()
-    {
-        return total_score;
-    }
 
     public List<Seats> findSeats()
     {
