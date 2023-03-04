@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class CountDownTimer : MonoBehaviour
 {
-
     float currentTime = 0f;
     float startingTime = 5f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
@@ -17,6 +16,8 @@ public class CountDownTimer : MonoBehaviour
     public AudioSource finishAudio; //audio indicator of level end
 
     [SerializeField] TextMeshProUGUI countTimeText; //time text object
+
+    [SerializeField] TextMeshProUGUI scoreTextGame; //score text object
 
     void Start()
     {
@@ -70,9 +71,8 @@ public class CountDownTimer : MonoBehaviour
         timeOutCanvas.enabled = true; //shows finish match banner
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
-
-        StartCoroutine(WaitAndContinue(4f, 200, 200)); //will show finish banner with specified time
-        //--------------------------- GET SCORE AND REQUIRED SCORE FROM GAME SATE MANAGER FOR LINE 74 (PREVIOUS LINE)
+        int total_score = int.Parse(scoreTextGame.GetComponent<TMPro.TextMeshProUGUI>().text);
+        StartCoroutine(WaitAndContinue(4f, total_score, 200)); //will show finish banner with specified time
     }
 
     private IEnumerator WaitAndContinue(float waitTime, int score, int requiredScore)

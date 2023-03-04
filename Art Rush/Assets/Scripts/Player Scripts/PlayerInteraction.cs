@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -14,11 +15,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeReference]
     private Transform player_grab_loc;
 
-    [SerializeField]
-    private int playerNum;
-    private string playerInteract;
-    private string playerPaint;
-
     [SerializeReference]
     private Transform brush;
     // Stores the item the player is holding by reference to the transform
@@ -30,11 +26,9 @@ public class PlayerInteraction : MonoBehaviour
 
     public Color current_color;
 
-    private void Start()
-    {
-        playerInteract = "Interact" + playerNum;
-        playerPaint = "Paint" + playerNum; 
-    }
+    [SerializeField]
+    private Graphic color_indicator; //UI brush color indicator
+
 
     private void Update()
     {
@@ -42,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward, Color.red);
 
         // If player presses the Interact "E" key
-        if (Input.GetButtonDown(playerInteract))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // Do a raycast in front of player
             checkRayCastInFront();
@@ -98,7 +92,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     target.Interact();
                     current_color = brush.GetChild(0).GetComponent<MeshRenderer>().material.color;
-
+                    color_indicator.color = current_color; //changing UI color
                 }
                 // If interact with Sink
                 else if (target.tag == "Sink")
@@ -145,9 +139,9 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        else if (Input.GetButtonDown(playerPaint))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
-            
+            Debug.Log("Q pressed");
             if (item_held != null)
             {
                 item_held.GetComponent<MeshRenderer>().material.color = current_color;
