@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106.00002, y: 1005.0001}
+  m_AnchoredPosition: {x: -866, y: 464}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5898168
@@ -3031,7 +3031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.00003, y: 996.00006}
+  m_AnchoredPosition: {x: -651, y: 481}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460189937
@@ -4805,9 +4805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total_score: 0
-  scoreTextGame: {fileID: 0}
-  scoreTextWin: {fileID: 0}
-  scoreTextLose: {fileID: 0}
+  scoreTextGame: {fileID: 341598096}
+  scoreTextWin: {fileID: 1201634866}
+  scoreTextLose: {fileID: 1795058261}
 --- !u!4 &730318785
 Transform:
   m_ObjectHideFlags: 0
