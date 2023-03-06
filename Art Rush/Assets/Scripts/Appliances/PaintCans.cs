@@ -19,6 +19,8 @@ public class PaintCans : Interactable
     [SerializeReference]
     private Renderer brush_mesh;
 
+    public Transform brush;
+
     private void Start()
     {
         // Change bucket color on start since each paint bucket is different
@@ -26,6 +28,7 @@ public class PaintCans : Interactable
         my_color = my_mat.color;
         my_mesh.material.color = my_color;
         my_color.a = 1;
+        
     }
     public override void Interact()
     {
@@ -36,6 +39,8 @@ public class PaintCans : Interactable
 
     void ChangePaint()
     {
+        brush = player.transform.Find("Brush Handle");
+        brush_mesh = brush.GetChild(0).GetComponent<MeshRenderer>();
         // Only change color if the brush is "washed", not a color besides its default
         if (brush_mesh.material.color == origin_mat.color)
         { brush_mesh.material.color = my_color; }
