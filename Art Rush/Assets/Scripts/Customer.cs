@@ -13,6 +13,9 @@ public class Customer : Interactable
     [SerializeReference]
     private Transform contained_prop;
 
+    // Reference to orderUI
+    private orderUI oUI = null;
+
     // Boolean to tell if customer already has an item
     private bool is_holding;
 
@@ -67,6 +70,7 @@ public class Customer : Interactable
         // Get the transform of the Exit and the GameStateManager
         exit_loc = GameObject.FindGameObjectWithTag("Exit").transform;
         gsm = GameObject.FindGameObjectWithTag("GameStateManager").GetComponent<GameStateManager>();
+        oUI = GameObject.FindObjectOfType<orderUI>();
 
         // Try and find the Customer a Seat
         SetSeatLocation();
@@ -98,7 +102,10 @@ public class Customer : Interactable
 
         // If the Success Order state is done, reset seat -> increase score based on wait time -> destroy customer 
         if (lifeTime <= 0)
-        {
+        { 
+            //Disable order UI
+            oUI.hideOrderUI(current_seat.name, getWantedProp());
+
             current_seat.setAvailability(true);
             gsm.addToScore(100 - wait_time);
             Destroy(gameObject);
@@ -113,6 +120,9 @@ public class Customer : Interactable
         // Once a the order fails, reset seat and destroy customer
         if (wait_time >= 50.0f)
         {
+            //Disable order UI
+            oUI.hideOrderUI(current_seat.name, getWantedProp());
+
             current_seat.setAvailability(true);
             Destroy(gameObject);
         }
@@ -167,6 +177,8 @@ public class Customer : Interactable
             // Change seat availability and make the customer move toward seat
             current_seat.setAvailability(false);
             agent.SetDestination(target_loc.position);
+
+
         }
     }
 
@@ -179,5 +191,16 @@ public class Customer : Interactable
     public void setWantedProp(Prop p)
     {
         wanted_prop = p;
+    }
+
+    // Get Functions for wanted_color and wanted_prop
+    public Color getWantedColor()
+    {
+        return wanted_color ;
+    }
+
+    public string getWantedProp()
+    {
+        return wanted_prop.ToString();
     }
 }

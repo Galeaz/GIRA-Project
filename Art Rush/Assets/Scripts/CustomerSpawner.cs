@@ -18,6 +18,10 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeReference]
     private GameStateManager gm;
 
+    // Reference to orderUI
+    [SerializeReference]
+    private orderUI oUI;
+
     // Limit of Customers active in game
     public int customer_limit;
 
@@ -48,6 +52,8 @@ public class CustomerSpawner : MonoBehaviour
 
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
+            //display order UI
+            oUI.showOrderUI(oUI.seatTracker(), randomNumProp, randomNumCol); // needs seat location, prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
         }
