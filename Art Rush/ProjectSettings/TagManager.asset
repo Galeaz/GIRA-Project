@@ -19,6 +19,7 @@ TagManager:
   - Vase
   - GameStateManager
   - WanderingProp
+  - orderBubble
   layers:
   - Default
   - TransparentFX
