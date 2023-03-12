@@ -29,6 +29,23 @@ public class CustomerSpawner : MonoBehaviour
     public List<Material> possible_materials;
     public List<Prop> possible_props;
 
+    //--------------------------------------------------------------------------------------------------------
+    public static CustomerSpawner _inst;
+    public static CustomerSpawner inst
+    {
+        get
+        {
+            if (_inst == null) 
+            {
+                _inst = Instantiate(Resources.Load<CustomerSpawner>("Customer Spawner"));
+            }
+            return _inst;
+        }
+    }
+
+    public Transform publicFieldOrderBubble;
+    //--------------------------------------------------------------------------------------------------------
+
     // Update is called once per frame
     void Update()
     {
