@@ -177,8 +177,6 @@ public class Customer : Interactable
             // Change seat availability and make the customer move toward seat
             current_seat.setAvailability(false);
             agent.SetDestination(target_loc.position);
-
-
         }
     }
 
@@ -196,7 +194,7 @@ public class Customer : Interactable
     // Get Functions for wanted_color and wanted_prop
     public Color getWantedColor()
     {
-        return wanted_color ;
+        return wanted_color;
     }
 
     public string getWantedProp()

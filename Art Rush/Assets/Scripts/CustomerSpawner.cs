@@ -66,14 +66,16 @@ public class CustomerSpawner : MonoBehaviour
             just_spawned.GetComponent<MeshRenderer>().material.color = possible_materials[randomNumCol].color;
             // Get the Customer Script from the just spawned customer and set its variables to the randomly generated one prior
             Customer customer_js = just_spawned.GetComponent<Customer>();
+            Transform customerTransform = just_spawned.GetComponent<Transform>();
 
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
             //display order UI
+            OrderBubble.Create(customerTransform, new Vector3(3, 3), OrderBubble.PropType.Apple, OrderBubble.ColorType.Blue);
             oUI.showOrderUI(oUI.seatTracker(), randomNumProp, randomNumCol); // needs seat location, prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
-        }
+        } 
         else
         {
             // Reset Cooldown
