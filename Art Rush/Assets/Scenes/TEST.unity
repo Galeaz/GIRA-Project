@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b07b6a77410bdf46be16e7005f40913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawnCustomer: {fileID: 987327322079358843, guid: e17ff12ddb1aa3c4b9338d3d3982f9c7, type: 3}
+  toSpawnCustomer: {fileID: 987327322079358843, guid: 04ce74530bc0c8e44941d5643cd82d6f, type: 3}
   spawn_loc: {fileID: 526809602}
   gm: {fileID: 1850479850}
   oUI: {fileID: 2060068935}

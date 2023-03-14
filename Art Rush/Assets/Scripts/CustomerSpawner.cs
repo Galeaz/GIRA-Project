@@ -71,7 +71,7 @@ public class CustomerSpawner : MonoBehaviour
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
             //display order UI
-            OrderBubble.Create(customerTransform, new Vector3(3, 3), OrderBubble.PropType.Apple, OrderBubble.ColorType.Blue);
+            //OrderBubble.Create(customerTransform, new Vector3(3, 3), OrderBubble.PropType.Apple, OrderBubble.ColorType.Blue);
             oUI.showOrderUI(oUI.seatTracker(), randomNumProp, randomNumCol); // needs seat location, prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
