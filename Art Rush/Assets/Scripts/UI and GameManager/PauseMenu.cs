@@ -22,8 +22,11 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(true); //activates menu
     }
 
+    
+
     public void ShowMainMenu()
     {
+        
         SceneManager.LoadScene("MainMenu"); //change scene to main menu
     }
 
@@ -34,6 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
