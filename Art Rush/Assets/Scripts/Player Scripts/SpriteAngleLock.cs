@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerSprite : MonoBehaviour
+public class SpriteAngleLock : MonoBehaviour
 {
     // Update is called once per frame
     void Update()

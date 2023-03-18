@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1701623954686985431}
-  - component: {fileID: 1701623954686985430}
   m_Layer: 0
   m_Name: OrderBubble
   m_TagString: Untagged
@@ -35,26 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1701623954686985430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701623954686985428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb0d583963672849972a864cff91b2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  appleProp: {fileID: 21300000, guid: fae00530d233a6f4fa1e8022a6f364b7, type: 3}
-  duckProp: {fileID: 21300000, guid: 11e0d38eecf91d84b88830b541e5c488, type: 3}
-  candleProp: {fileID: 21300000, guid: a08e0c795b1707342ae931c0c047cbcb, type: 3}
-  iceProp: {fileID: 21300000, guid: 2f6a0021e3dbd644eb823e9b033abae4, type: 3}
-  vaseProp: {fileID: 21300000, guid: fa551ef55e9d4ef439896a1983a76472, type: 3}
-  blueColor: {fileID: 21300000, guid: a3ea8fe80171ab343b833eb3bfa67bf8, type: 3}
-  redColor: {fileID: 21300000, guid: 66364184e7c6d8643993044c1c58f78a, type: 3}
-  yellowColor: {fileID: 21300000, guid: 9f686c3932149a740975a21b4810cfa9, type: 3}
 --- !u!1 &1701623955216239938
 GameObject:
   m_ObjectHideFlags: 0

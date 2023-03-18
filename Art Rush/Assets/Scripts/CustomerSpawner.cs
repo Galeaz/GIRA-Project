@@ -18,9 +18,8 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeReference]
     private GameStateManager gm;
 
-    // Reference to orderUI
-    [SerializeReference]
-    private orderUI oUI;
+    //[SerializeReference]
+    //private orderUI OUIinst;
 
     // Limit of Customers active in game
     public int customer_limit;
@@ -29,22 +28,48 @@ public class CustomerSpawner : MonoBehaviour
     public List<Material> possible_materials;
     public List<Prop> possible_props;
 
-    //--------------------------------------------------------------------------------------------------------
-    public static CustomerSpawner _inst;
-    public static CustomerSpawner inst
+
+    //------------------------------------------------------------------------------------------------------------------
+    //Props
+    [SerializeField]
+    private Sprite appleProp;
+    [SerializeField]
+    private Sprite duckProp;
+    [SerializeField]
+    private Sprite candleProp;
+    [SerializeField]
+    private Sprite iceProp;
+    [SerializeField]
+    private Sprite vaseProp;
+
+    //Colors
+    [SerializeField]
+    private Sprite blueColor;
+    [SerializeField]
+    private Sprite redColor;
+    [SerializeField]
+    private Sprite yellowColor;
+
+    public enum PropType
     {
-        get
-        {
-            if (_inst == null) 
-            {
-                _inst = Instantiate(Resources.Load<CustomerSpawner>("Customer Spawner"));
-            }
-            return _inst;
-        }
+        Apple,
+        Duck,
+        Candle,
+        Ice,
+        Vase
     }
 
-    public Transform publicFieldOrderBubble;
-    //--------------------------------------------------------------------------------------------------------
+    public enum ColorType
+    {
+        Blue,
+        Red,
+        Yellow
+    }
+
+    private SpriteRenderer propSpriteRenderer;
+    private SpriteRenderer colorSpriteRenderer;
+    //------------------------------------------------------------------------------------------------------------------
+
 
     // Update is called once per frame
     void Update()
@@ -66,13 +91,13 @@ public class CustomerSpawner : MonoBehaviour
             just_spawned.GetComponent<MeshRenderer>().material.color = possible_materials[randomNumCol].color;
             // Get the Customer Script from the just spawned customer and set its variables to the randomly generated one prior
             Customer customer_js = just_spawned.GetComponent<Customer>();
-            Transform customerTransform = just_spawned.GetComponent<Transform>();
 
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
             //display order UI
-            //OrderBubble.Create(customerTransform, new Vector3(3, 3), OrderBubble.PropType.Apple, OrderBubble.ColorType.Blue);
-            oUI.showOrderUI(oUI.seatTracker(), randomNumProp, randomNumCol); // needs seat location, prop and color
+            propSpriteRenderer.sprite = customer_js.getPropSprite();
+            colorSpriteRenderer.sprite = customer_js.getColorSprite();
+            showOrderUI(randomNumProp, randomNumCol); // needs prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
         } 
@@ -80,6 +105,51 @@ public class CustomerSpawner : MonoBehaviour
         {
             // Reset Cooldown
             spawn_cooldown = 7.0f;
+        }
+    }
+
+    public void showOrderUI(int prop_wanted, int color_wanted)
+    {
+        //selecting proper prop
+        switch (prop_wanted)
+        {
+            case 0:
+                propSpriteRenderer.sprite = appleProp;
+                break;
+            case 1:
+                propSpriteRenderer.sprite = duckProp;
+                break;
+            case 2:
+                propSpriteRenderer.sprite = candleProp;
+                break;
+            case 3:
+                propSpriteRenderer.sprite = iceProp;
+                break;
+            case 4:
+                propSpriteRenderer.sprite = vaseProp;
+                break;
+            default:
+                Debug.Log("PROP ERROR: GIVING APPLE");
+                propSpriteRenderer.sprite = appleProp;
+                break;
+        }
+
+        //selecting proper color
+        switch (color_wanted)
+        {
+            case 0:
+                colorSpriteRenderer.sprite = blueColor;
+                break;
+            case 1:
+                colorSpriteRenderer.sprite = redColor;
+                break;
+            case 2:
+                colorSpriteRenderer.sprite = yellowColor;
+                break;
+            default:
+                Debug.Log("COLOR ERROR: GIVING BLUE");
+                colorSpriteRenderer.sprite = blueColor;
+                break;
         }
     }
 }
