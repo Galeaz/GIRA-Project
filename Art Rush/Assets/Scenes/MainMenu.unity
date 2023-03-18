@@ -662,7 +662,6 @@ MonoBehaviour:
 
     Isaac Corona
 
-
     Renee Tran'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4372371ab2ae4074591a247aa15b3d6d, type: 2}
@@ -2112,7 +2111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "   Programmers\n\n\n\n         Artist\n"
+  m_text: "   Programmers\n\n\n\n\n    Art by Renee\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4372371ab2ae4074591a247aa15b3d6d, type: 2}
   m_sharedMaterial: {fileID: 6282596096870363283, guid: 4372371ab2ae4074591a247aa15b3d6d, type: 2}
