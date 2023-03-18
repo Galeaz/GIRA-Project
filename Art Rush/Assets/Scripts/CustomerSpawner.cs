@@ -28,8 +28,6 @@ public class CustomerSpawner : MonoBehaviour
     public List<Material> possible_materials;
     public List<Prop> possible_props;
 
-
-    //------------------------------------------------------------------------------------------------------------------
     //Props
     [SerializeField]
     private Sprite appleProp;
@@ -66,10 +64,7 @@ public class CustomerSpawner : MonoBehaviour
         Yellow
     }
 
-    private SpriteRenderer propSpriteRenderer;
-    private SpriteRenderer colorSpriteRenderer;
-    //------------------------------------------------------------------------------------------------------------------
-
+    private Transform customerTransform;
 
     // Update is called once per frame
     void Update()
@@ -92,11 +87,12 @@ public class CustomerSpawner : MonoBehaviour
             // Get the Customer Script from the just spawned customer and set its variables to the randomly generated one prior
             Customer customer_js = just_spawned.GetComponent<Customer>();
 
+            customerTransform = just_spawned.transform;
+            
+
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
             //display order UI
-            propSpriteRenderer.sprite = customer_js.getPropSprite();
-            colorSpriteRenderer.sprite = customer_js.getColorSprite();
             showOrderUI(randomNumProp, randomNumCol); // needs prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
@@ -114,23 +110,22 @@ public class CustomerSpawner : MonoBehaviour
         switch (prop_wanted)
         {
             case 0:
-                propSpriteRenderer.sprite = appleProp;
+                customerTransform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = appleProp;
                 break;
             case 1:
-                propSpriteRenderer.sprite = duckProp;
+                customerTransform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = duckProp;
                 break;
             case 2:
-                propSpriteRenderer.sprite = candleProp;
+                customerTransform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = candleProp;
                 break;
             case 3:
-                propSpriteRenderer.sprite = iceProp;
+                customerTransform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = iceProp;
                 break;
             case 4:
-                propSpriteRenderer.sprite = vaseProp;
+                customerTransform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = vaseProp;
                 break;
             default:
                 Debug.Log("PROP ERROR: GIVING APPLE");
-                propSpriteRenderer.sprite = appleProp;
                 break;
         }
 
@@ -138,17 +133,16 @@ public class CustomerSpawner : MonoBehaviour
         switch (color_wanted)
         {
             case 0:
-                colorSpriteRenderer.sprite = blueColor;
+                customerTransform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>().sprite = blueColor;
                 break;
             case 1:
-                colorSpriteRenderer.sprite = redColor;
+                customerTransform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>().sprite = redColor;
                 break;
             case 2:
-                colorSpriteRenderer.sprite = yellowColor;
+                customerTransform.GetChild(1).GetChild(2).GetComponent<SpriteRenderer>().sprite = yellowColor;
                 break;
             default:
                 Debug.Log("COLOR ERROR: GIVING BLUE");
-                colorSpriteRenderer.sprite = blueColor;
                 break;
         }
     }

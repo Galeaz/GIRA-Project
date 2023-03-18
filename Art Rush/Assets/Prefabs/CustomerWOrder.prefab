@@ -185,6 +185,10 @@ PrefabInstance:
       value: OrderBubble
       objectReference: {fileID: 0}
     - target: {fileID: 1701623954686985428, guid: c899c41984be60945a06f6a98e232223, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701623954686985428, guid: c899c41984be60945a06f6a98e232223, type: 3}
       propertyPath: m_TagString
       value: orderBubble
       objectReference: {fileID: 0}
@@ -251,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 1701623955568408884, guid: c899c41984be60945a06f6a98e232223, type: 3}
       propertyPath: m_TagString
       value: Props
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701623956225219746, guid: c899c41984be60945a06f6a98e232223, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c899c41984be60945a06f6a98e232223, type: 3}
