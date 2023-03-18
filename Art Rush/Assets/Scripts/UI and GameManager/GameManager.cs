@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     public GameObject Resume_Button;
 
     public Behaviour gameStartCanvas; //canvas start banner
+    public float startTime;
 
     void Start()
     {
         PauseGame(); //starts with game paused to avoid player from moving
-        StartCoroutine(ShowBannerAndContinue(2f)); //will disable start canvas banner after specified time
+        StartCoroutine(ShowBannerAndContinue(startTime)); //will disable start canvas banner after specified time
     }
 
     private IEnumerator ShowBannerAndContinue(float waitTime)

@@ -19,6 +19,7 @@ TagManager:
   - Vase
   - GameStateManager
   - WanderingProp
+  - orderBubble
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 2616145265
     locked: 0

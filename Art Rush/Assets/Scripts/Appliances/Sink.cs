@@ -15,6 +15,8 @@ public class Sink : Interactable
     [SerializeReference]
     private Graphic color_indicator;
 
+    private Transform brush;
+
     public override void Interact()
     {
         base.Interact();
@@ -24,6 +26,8 @@ public class Sink : Interactable
 
     void CleanBrush()
     {
+        brush = player.transform.Find("Brush Handle");
+        brush_mesh = brush.GetChild(0).GetComponent<MeshRenderer>();
         // Only reset brush if its not its default color
         if (brush_mesh.material.color != origin_mat.color)
         {

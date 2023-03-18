@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //Used for the multiplayer controls, want different key presses to only affect one player not both
     [SerializeField]
     private int playerNumber;
-    public string playerDash;
+    private string playerDash;
     
     // Player speed variables
     public float activeMoveSpeed;

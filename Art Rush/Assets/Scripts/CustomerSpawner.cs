@@ -18,12 +18,33 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeReference]
     private GameStateManager gm;
 
+    // Reference to orderUI
+    [SerializeReference]
+    private orderUI oUI;
+
     // Limit of Customers active in game
     public int customer_limit;
 
     // List of possible materials and props a customer's order can have
     public List<Material> possible_materials;
     public List<Prop> possible_props;
+
+    //--------------------------------------------------------------------------------------------------------
+    public static CustomerSpawner _inst;
+    public static CustomerSpawner inst
+    {
+        get
+        {
+            if (_inst == null) 
+            {
+                _inst = Instantiate(Resources.Load<CustomerSpawner>("Customer Spawner"));
+            }
+            return _inst;
+        }
+    }
+
+    public Transform publicFieldOrderBubble;
+    //--------------------------------------------------------------------------------------------------------
 
     // Update is called once per frame
     void Update()
@@ -45,12 +66,16 @@ public class CustomerSpawner : MonoBehaviour
             just_spawned.GetComponent<MeshRenderer>().material.color = possible_materials[randomNumCol].color;
             // Get the Customer Script from the just spawned customer and set its variables to the randomly generated one prior
             Customer customer_js = just_spawned.GetComponent<Customer>();
+            Transform customerTransform = just_spawned.GetComponent<Transform>();
 
             customer_js.setWantedColor(possible_materials[randomNumCol].color);
             customer_js.setWantedProp(possible_props[randomNumProp]);
+            //display order UI
+            //OrderBubble.Create(customerTransform, new Vector3(3, 3), OrderBubble.PropType.Apple, OrderBubble.ColorType.Blue);
+            oUI.showOrderUI(oUI.seatTracker(), randomNumProp, randomNumCol); // needs seat location, prop and color
             // Reset Cooldown
             spawn_cooldown = 7.0f;
-        }
+        } 
         else
         {
             // Reset Cooldown
