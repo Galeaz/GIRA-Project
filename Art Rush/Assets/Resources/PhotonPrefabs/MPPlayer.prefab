@@ -324,10 +324,10 @@ GameObject:
   - component: {fileID: 6983832260807176627}
   - component: {fileID: 6983832260807176624}
   - component: {fileID: 6983832260269437996}
-  - component: {fileID: 8575172665584042477}
-  - component: {fileID: 3949805597884578777}
+  - component: {fileID: 2127327161609589049}
+  - component: {fileID: -6498478974154667978}
   m_Layer: 0
-  m_Name: Player
+  m_Name: MPPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6983832260807176633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: 1.019, z: 8.1}
+  m_LocalPosition: {x: -0.22, y: 2, z: 8.1}
   m_LocalScale: {x: 1.5745, y: 1.8709784, z: 1.5745}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6983832260807176627}
-  playerNumber: 0
+  playerNumber: 1
   activeMoveSpeed: 1.5
   normalSpeed: 15
   dashSpeed: 50
@@ -469,13 +469,13 @@ MonoBehaviour:
     m_Bits: 192
   target: {fileID: 0}
   player_grab_loc: {fileID: 1821275344}
-  playerNum: 0
+  playerNum: 1
   brush: {fileID: 657945387}
   item_held: {fileID: 0}
   holding_item: 0
   color_indicator: {fileID: 0}
   current_color: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &8575172665584042477
+--- !u!114 &2127327161609589049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,11 +494,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 3949805597884578777}
+  - {fileID: -6498478974154667978}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3949805597884578777
+--- !u!114 &-6498478974154667978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
