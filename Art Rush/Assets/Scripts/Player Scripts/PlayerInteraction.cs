@@ -155,6 +155,7 @@ public class PlayerInteraction : MonoBehaviour
             if (item_held != null)
             {
                 item_held.GetComponent<MeshRenderer>().material.color = current_color;
+                item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
             }
         }
     }
