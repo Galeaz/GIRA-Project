@@ -23,6 +23,6 @@ public class PlayerManager : MonoBehaviour
     private void CreateController()
     {
         Transform spawnpoint = SpawnManager.Instance.GetSpawnpoint();
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "MPPlayer"), spawnpoint.position, spawnpoint.rotation); 
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "ThePlayer"), spawnpoint.position, spawnpoint.rotation); 
     }
 }
