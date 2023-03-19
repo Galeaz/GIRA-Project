@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     //singleton
-    public static MainMenu instance;
+    public static MainMenu MM_instance;
 
     public GameObject singleplayer_Button;
     public GameObject multiplayer_Button;
@@ -18,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        MM_instance = this;
     }
 
     // Start is called before the first frame update
@@ -35,7 +34,7 @@ public class MainMenu : MonoBehaviour
     public void PlayMultiplayerGame()
     {
         
-        SceneManager.LoadScene("Multiplayer Game"); //loads multiplayer game scene
+        SceneManager.LoadScene("MultiplayerOption"); //loads multiplayer game scene
     }
     
     public void QuitGame()
