@@ -39,7 +39,7 @@ public class PaintCans : Interactable
     void ChangePaint()
     {
         brush = player.transform.Find("Brush Handle");
-        brush_mesh = brush.GetChild(0).GetChild(0).GetComponent<MeshRenderer>();
+        brush_mesh = brush.GetChild(0).GetComponent<MeshRenderer>();
         // Only change color if the brush is "washed", not a color besides its default
         if (brush_mesh.material.color == origin_mat.color)
         { brush_mesh.material.color = my_color; }
