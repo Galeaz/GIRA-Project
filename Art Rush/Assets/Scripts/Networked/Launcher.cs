@@ -5,10 +5,13 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public static Launcher Instance;
+    [SerializeField]
+    public GameObject Back_Button;
     #region Private Serilizable Fields
 
     [SerializeField]
@@ -153,6 +156,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+    }
+
+    public void GoBack()
+    {
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("MainMenu");
     }
 
     #endregion
