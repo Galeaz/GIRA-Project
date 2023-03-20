@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,6 +31,14 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter;
     private float dashCooldownCounter;
 
+    PhotonView PV;
+
+    private void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
+
     private void Start()
     {
         // Start set player's speed to default (normalSpeed)
@@ -42,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!PV.IsMine)
+        {
+            return;
+        }
         // Create Vector from player input
         Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"+playerNumber), 0f, Input.GetAxisRaw("Vertical"+playerNumber)).normalized;
         // Move and Rotate player

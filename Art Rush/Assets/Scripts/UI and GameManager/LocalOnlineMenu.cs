@@ -25,12 +25,12 @@ public class LocalOnlineMenu : MonoBehaviour
 
     public void PlayLocalGame()
     {
-        SceneManager.LoadScene("Launcher"); //loads singleplayer game scene
+        SceneManager.LoadScene("Multiplayer Game"); //loads singleplayer game scene
     }
 
     public void PlayOnlineGame()
     {
-        SceneManager.LoadScene("Multiplayer Game"); //loads singleplayer game scene
+        SceneManager.LoadScene("Launcher"); //loads singleplayer game scene
     }
 
     public void GoBack()
