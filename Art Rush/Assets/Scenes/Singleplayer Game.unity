@@ -3699,6 +3699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9ddffcb75a2814785f9b68100183ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingTime: 64
   timeOutCanvas: {fileID: 293524355}
   winCanvas: {fileID: 1340755164}
   loseCanvas: {fileID: 87580411}

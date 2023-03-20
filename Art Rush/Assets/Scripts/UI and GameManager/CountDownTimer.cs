@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class CountDownTimer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startingTime = 60f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
-    
+
+    [SerializeField] float startingTime; //time the level will have
+
+
     public Behaviour timeOutCanvas; //finish banner canvas
     public Behaviour winCanvas; //win screen canvas
     public Behaviour loseCanvas; //lose screen canvas
