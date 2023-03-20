@@ -273,6 +273,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sink
       objectReference: {fileID: 0}
+    - target: {fileID: 3312783910094279315, guid: 5a39490d4e1da5d4f804c4743bf103b8, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3327509
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312783910094279315, guid: 5a39490d4e1da5d4f804c4743bf103b8, type: 3}
+      propertyPath: m_Center.y
+      value: 0.16637582
+      objectReference: {fileID: 0}
     - target: {fileID: 3312783910094279340, guid: 5a39490d4e1da5d4f804c4743bf103b8, type: 3}
       propertyPath: m_RootOrder
       value: 19
