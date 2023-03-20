@@ -3843,7 +3843,7 @@ MonoBehaviour:
   loseCanvas: {fileID: 87580411}
   finishAudio: {fileID: 767779732}
   countTimeText: {fileID: 151751278}
-  requiredScoreTextGame: {fileID: 0}
+  requiredScoreTextGame: {fileID: 831734710}
   requiredScoreTextWinScreen: {fileID: 2075254413}
   scoreTextGame: {fileID: 686054788}
 --- !u!1 &697838806
