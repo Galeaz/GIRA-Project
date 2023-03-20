@@ -21,6 +21,7 @@ public class CountDownTimer : MonoBehaviour
     [SerializeField] TextMeshProUGUI countTimeText; //time text object
     [SerializeField] TextMeshProUGUI requiredScoreTextGame; //score required for game screen
     [SerializeField] TextMeshProUGUI requiredScoreTextWinScreen; //score required for win screen
+    [SerializeField] TextMeshProUGUI requiredScoreTextLoseScreen; //score required for lose screen
     [SerializeField] TextMeshProUGUI scoreTextGame; //score text object
 
     void Start()
@@ -28,6 +29,7 @@ public class CountDownTimer : MonoBehaviour
         currentTime = startingTime; //set level time
         requiredScoreTextGame.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
         requiredScoreTextWinScreen.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
+        requiredScoreTextLoseScreen.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
     }
 
     // Update is called once per frame

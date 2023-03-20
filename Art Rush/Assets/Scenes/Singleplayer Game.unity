@@ -3836,8 +3836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9ddffcb75a2814785f9b68100183ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 64
-  required_score: 500
+  startingTime: 120
+  required_score: 750
   timeOutCanvas: {fileID: 293524355}
   winCanvas: {fileID: 1340755164}
   loseCanvas: {fileID: 87580411}
@@ -3845,6 +3845,7 @@ MonoBehaviour:
   countTimeText: {fileID: 151751278}
   requiredScoreTextGame: {fileID: 831734710}
   requiredScoreTextWinScreen: {fileID: 2075254413}
+  requiredScoreTextLoseScreen: {fileID: 1810045614}
   scoreTextGame: {fileID: 686054788}
 --- !u!1 &697838806
 GameObject:
@@ -4398,7 +4399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -84, y: 0}
+  m_AnchoredPosition: {x: -37.3, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831734710
