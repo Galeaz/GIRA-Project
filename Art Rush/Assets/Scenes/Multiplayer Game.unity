@@ -3503,7 +3503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total_score: 0
-  scoreTextGame: {fileID: 0}
+  scoreTextGame: {fileID: 19179518}
   scoreTextWin: {fileID: 1201634866}
   scoreTextLose: {fileID: 1795058261}
 --- !u!4 &730318785

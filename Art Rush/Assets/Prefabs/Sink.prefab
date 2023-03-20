@@ -112,3 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin_mat: {fileID: 2100000, guid: bf78e663942694441ab2d56abf7dbd79, type: 2}
   brush_mesh: {fileID: 0}
+  color_indicator: {fileID: 0}
