@@ -10,7 +10,7 @@ public class WP_Interactions : Interactable
     {
         base.Interact();
         // Once interacted with add to score and, destroy itself
-        gsm.addToScore(100);
+        gsm.addToScore(50);
         Destroy(gameObject);
     }
 
