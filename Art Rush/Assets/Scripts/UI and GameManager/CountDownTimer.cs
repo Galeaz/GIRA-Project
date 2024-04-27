@@ -7,21 +7,29 @@ using UnityEngine.SceneManagement;
 public class CountDownTimer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startingTime = 60f; //time the level will have
     bool timerToggle = true; //keeping track if timer enabled
-    
+
+    [SerializeField] float startingTime; //time the level will have
+    [SerializeField] int required_score; //scored needed to win
+
+
     public Behaviour timeOutCanvas; //finish banner canvas
     public Behaviour winCanvas; //win screen canvas
     public Behaviour loseCanvas; //lose screen canvas
     public AudioSource finishAudio; //audio indicator of level end
 
     [SerializeField] TextMeshProUGUI countTimeText; //time text object
-
+    [SerializeField] TextMeshProUGUI requiredScoreTextGame; //score required for game screen
+    [SerializeField] TextMeshProUGUI requiredScoreTextWinScreen; //score required for win screen
+    [SerializeField] TextMeshProUGUI requiredScoreTextLoseScreen; //score required for lose screen
     [SerializeField] TextMeshProUGUI scoreTextGame; //score text object
 
     void Start()
     {
         currentTime = startingTime; //set level time
+        requiredScoreTextGame.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
+        requiredScoreTextWinScreen.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
+        requiredScoreTextLoseScreen.GetComponent<TMPro.TextMeshProUGUI>().text = required_score.ToString();
     }
 
     // Update is called once per frame
@@ -72,7 +80,7 @@ public class CountDownTimer : MonoBehaviour
         currentTime = 0; //stops showing negative time
         finishAudio.Play(); //plays a small audio to indicate end of game
         int total_score = int.Parse(scoreTextGame.GetComponent<TMPro.TextMeshProUGUI>().text);
-        StartCoroutine(WaitAndContinue(4f, total_score, 200)); //will show finish banner with specified time
+        StartCoroutine(WaitAndContinue(4f, total_score, required_score)); //will show finish banner with specified time
     }
 
     private IEnumerator WaitAndContinue(float waitTime, int score, int requiredScore)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrderBubble : MonoBehaviour
 {
-    public static void Create(Transform parent, Vector3 localPosition, PropType propType, ColorType colorType)
+    /*public static void Create(Transform parent, Vector3 localPosition, PropType propType, ColorType colorType)
     {
         Transform orderBubbleTransform = Instantiate(CustomerSpawner.inst.publicFieldOrderBubble, parent);
         orderBubbleTransform.localPosition = localPosition;
@@ -102,10 +102,5 @@ public class OrderBubble : MonoBehaviour
                 Debug.Log("COLOR ERROR: GIVING BLUE");
                 return blueColor;
         }
-    }
-
-    void Update()
-    {
-        
-    }
+    }*/
 }
