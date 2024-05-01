@@ -3,17 +3,7 @@ guid: 65968b9eac5fcb447b077bfcc9910942
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GreenGift
-    second: {fileID: 2100000, guid: 5075dfffaa20131499ae22412991b8be, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RedBow
-    second: {fileID: 2100000, guid: d620a988b115a1c47b41736c0e763252, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
