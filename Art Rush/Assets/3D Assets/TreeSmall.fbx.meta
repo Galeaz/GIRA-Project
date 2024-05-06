@@ -3,52 +3,7 @@ guid: 66db1b5d2c349fa4cb980e0c98bc8c5b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BlueMetallic
-    second: {fileID: 2100000, guid: 66b372e4ef8d58f4abbeff5b99ac1de4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GoldMetallic
-    second: {fileID: 2100000, guid: ffa05692aa1309c4885e6ee147137940, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LightGreenMetallic
-    second: {fileID: 2100000, guid: 6ce900ead08f1fc4e983e322c193e416, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RedMetallic
-    second: {fileID: 2100000, guid: 4a49aa97e65af2f4384238b307701015, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SilverMetallic
-    second: {fileID: 2100000, guid: 93443958cf0fa8d44945abdcc1db02ed, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SilverStar
-    second: {fileID: 2100000, guid: f9b559ffd6eecdc4a999984ca376433b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: StarGold
-    second: {fileID: 2100000, guid: 4bf0f7ca34661bb4eaa7539f78e1cdc1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreeBrown
-    second: {fileID: 2100000, guid: ac9e340a2b9e29047a7c9a68ceee3a21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreeGreen
-    second: {fileID: 2100000, guid: 4da8d4a3034434045806171511c3360d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,32 +3,7 @@ guid: fde96e1cac59b9044964833f26150abd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 8ffa29e787780504891ce6ba793699dd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TireBlack
-    second: {fileID: 2100000, guid: d73a47d96fb89404288555b5c0bc1a5c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TireCounterRed
-    second: {fileID: 2100000, guid: 26efe399fba06dd429b1ee19defe34f0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TireCounterSurface
-    second: {fileID: 2100000, guid: ff86db6dada145f4e8580997c56bbea8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WrenchMetal
-    second: {fileID: 2100000, guid: 5b372e85ed40955469458eef274973f8, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
