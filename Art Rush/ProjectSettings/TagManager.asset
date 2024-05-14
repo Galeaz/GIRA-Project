@@ -22,6 +22,7 @@ TagManager:
   - orderBubble
   - Props
   - Colors
+  - painting counter
   layers:
   - Default
   - TransparentFX

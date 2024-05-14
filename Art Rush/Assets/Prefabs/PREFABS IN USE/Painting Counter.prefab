@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 6356789486608590323}
   m_Layer: 6
   m_Name: Painting Counter
-  m_TagString: Counter
+  m_TagString: painting counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -50,4 +50,10 @@ public class Counter : Interactable
         is_holding = false;
         contained_prop = null;
     }
+
+    // Public method to get the contained_prop
+    public Transform GetContainedProp()
+    {
+        return contained_prop;
+    }
 }

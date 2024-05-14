@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public Counter counter;
     // Info for raycasting
     private Ray ray;
     private float max_dist = 4f;
@@ -65,7 +66,7 @@ public class PlayerInteraction : MonoBehaviour
                     holding_item = true;
                 }
                 // If interact with Item Counter
-                else if (target.tag == "Counter")
+                else if (target.tag == "Counter" || target.tag == "painting counter")
                 {
                     // If already holding an item
                     if (holding_item == true)
@@ -148,14 +149,18 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
+        // If players presses the paint button "q".
         else if (Input.GetButtonDown(playerPaint))
         {
             
-            if (item_held != null)
+            if (target.tag == "painting counter" && item_held == null)
             {
+                item_held = counter.GetContainedProp();
+                //Debug.Log(item_held);
                 item_held.GetComponent<MeshRenderer>().material.color = current_color;
                 item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
+            } else {
+                target = null;
             }
         }
     }
@@ -171,6 +176,9 @@ public class PlayerInteraction : MonoBehaviour
             // Print out what was hit
             Debug.Log(hit.collider.gameObject.name + " was hit");
             Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            // Created this variable to be able to retrieve the object that is placed on the "counter" it is on.
+            counter = hit.collider.GetComponent<Counter>();
 
             // Do only if the object hit was an Interactable
             if (interactable != null)
