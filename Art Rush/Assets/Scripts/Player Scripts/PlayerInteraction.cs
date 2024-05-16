@@ -152,15 +152,20 @@ public class PlayerInteraction : MonoBehaviour
         // If players presses the paint button "q".
         else if (Input.GetButtonDown(playerPaint))
         {
-            
-            if (target.tag == "painting counter" && item_held == null)
+            // Do a raycast in front of player
+            checkRayCastInFront();
+
+            // If the function above returned an interactable
+            if (target != null)
             {
-                item_held = counter.GetContainedProp();
-                //Debug.Log(item_held);
-                item_held.GetComponent<MeshRenderer>().material.color = current_color;
-                item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
-            } else {
-                target = null;
+                // Only if the interactable is the Painting Counter Object.
+                // Whatever object is in the counter, is painted with the brush color in hand.
+                if (target.tag == "painting counter")
+                {
+                    item_held = counter.GetContainedProp();
+                    item_held.GetComponent<MeshRenderer>().material.color = current_color;
+                    item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
+                }
             }
         }
     }
