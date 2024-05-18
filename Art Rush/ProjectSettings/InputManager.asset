@@ -329,8 +329,8 @@ InputManager:
     m_Name: Horizontal2
     descriptiveName: Player1 horizontal input controller
     descriptiveNegativeName: 
-    negativeButton: j
-    positiveButton: l
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -345,8 +345,8 @@ InputManager:
     m_Name: Vertical2
     descriptiveName: Player1 horizontal input controller
     descriptiveNegativeName: 
-    negativeButton: k
-    positiveButton: i
+    negativeButton: down
+    positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3

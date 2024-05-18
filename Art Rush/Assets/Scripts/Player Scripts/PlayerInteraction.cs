@@ -1,9 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public Counter counter;
+    public Counter counter; // Cesar added
+
+    // Cesar Added
+    public Slider mySlider;
+    private bool castRequest, castSuccess, castInProgress;
+    public float castTime = 1;
+    private float castStartTime;
+    // Cesar Added
+
+
     // Info for raycasting
     private Ray ray;
     private float max_dist = 4f;
@@ -152,22 +163,85 @@ public class PlayerInteraction : MonoBehaviour
         // If players presses the paint button "q".
         else if (Input.GetButtonDown(playerPaint))
         {
-            // Do a raycast in front of player
-            checkRayCastInFront();
-
-            // If the function above returned an interactable
-            if (target != null)
+            castTime = 2f;
+            if (!castInProgress)
             {
+                StartCoroutine(Cast());
+            }
+        }
+
+        if (castRequest)
+        {
+            ProgressSlider();
+
+            if (Input.GetButtonUp(playerPaint))
+            {
+                CastFail();
+            }
+        }
+    }
+
+    private IEnumerator Cast()
+    {
+        // Do a raycast in front of player
+        checkRayCastInFront();
+
+        // If the function above returned an interactable
+        if (target != null)
+        {
+            if (target.tag == "painting counter" && counter.GetContainedProp() != null)
+            {
+                castInProgress = true;
+
+                RequestCast();
+
+                yield return new WaitUntil(() => castRequest == false);
+
                 // Only if the interactable is the Painting Counter Object.
                 // Whatever object is in the counter, is painted with the brush color in hand.
-                if (target.tag == "painting counter")
+                if (castSuccess)
                 {
                     item_held = counter.GetContainedProp();
                     item_held.GetComponent<MeshRenderer>().material.color = current_color;
                     item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
                 }
+                else
+                {
+                    Debug.Log("Painting was unsuccessful");
+                }
             }
+            mySlider.value = 0;
+            castInProgress = false;
         }
+    }
+
+    private void RequestCast()
+    {
+        castRequest = true;
+        castSuccess = true;
+        mySlider.value = 0;
+        castStartTime = Time.time;
+        Invoke("CastSuccess", castTime);
+    }
+
+    private void CastSuccess()
+    {
+        castRequest = false;
+        castSuccess = true;
+    }
+
+    private void CastFail()
+    {
+        castRequest = false;
+        castSuccess = false;
+        CancelInvoke("CastSuccess");
+    }
+
+    private void ProgressSlider()
+    {
+        float timePassed = Time.time - castStartTime;
+        float percentComplete = timePassed / castTime;
+        mySlider.value = percentComplete;
     }
 
     // Perform a raycast in front of the player for a short distance
