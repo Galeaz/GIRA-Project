@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3317720090573742332}
   - component: {fileID: 1847939629535997785}
   - component: {fileID: 4486082227625319315}
+  - component: {fileID: 5922488427618966601}
+  - component: {fileID: 3133684107232353255}
   m_Layer: 0
   m_Name: GingerbreadMan
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2684488926917524038}
   m_LocalRotation: {x: -0.091228314, y: -0.061546333, z: 0.016149433, w: 0.99379516}
-  m_LocalPosition: {x: -2.9289, y: -1.972, z: 7.9589}
-  m_LocalScale: {x: 6.8266497, y: 6.8266506, z: 6.8266506}
+  m_LocalPosition: {x: -2.929, y: -1.5484, z: 7.8065}
+  m_LocalScale: {x: 44.67077, y: 44.670776, z: 44.670776}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,3 +88,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &5922488427618966601
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684488926917524038}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3133684107232353255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684488926917524038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033003215, y: 0.042744476, z: 0.0038381498}
+  m_Center: {x: -0.0000034430489, y: -0.011738574, z: 0.0019190749}

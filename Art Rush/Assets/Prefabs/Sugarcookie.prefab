@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 491397166082983426}
   - component: {fileID: 3566306145151584679}
   - component: {fileID: 1628869039216229741}
+  - component: {fileID: 6530585952327684962}
+  - component: {fileID: 1594090413857201625}
   m_Layer: 0
   m_Name: Sugarcookie
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980126324028005560}
   m_LocalRotation: {x: -0.68169296, y: 0.00964245, z: 0.016255114, w: 0.73139423}
-  m_LocalPosition: {x: -3.002, y: -2.135, z: 8.306}
-  m_LocalScale: {x: 0.8142002, y: 0.8142002, z: 0.8142002}
+  m_LocalPosition: {x: -3.0586, y: -1.9944, z: 8.5457}
+  m_LocalScale: {x: 6.936164, y: 6.936164, z: 6.936164}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,3 +90,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &6530585952327684962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980126324028005560}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1594090413857201625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980126324028005560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25869203, y: 0.254652, z: 0.057796113}
+  m_Center: {x: 0.010410829, y: 0.037081506, z: -0.02574077}
