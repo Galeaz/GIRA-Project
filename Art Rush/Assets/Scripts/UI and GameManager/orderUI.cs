@@ -13,8 +13,8 @@ public class orderUI : MonoBehaviour
     private Sprite candleProp;
     [SerializeField]
     private Sprite iceProp;
-    [SerializeField]
-    private Sprite vaseProp;
+    /*[SerializeField]
+    private Sprite vaseProp;*/
 
     //Colors
     [SerializeField]
@@ -66,9 +66,9 @@ public class orderUI : MonoBehaviour
             case 3:
                 propSpriteRenderer.sprite = iceProp;
                 break;
-            case 4:
+            /*case 4:
                 propSpriteRenderer.sprite = vaseProp;
-                break;
+                break;*/
             default:
                 Debug.Log("PROP ERROR: GIVING APPLE");
                 propSpriteRenderer.sprite = appleProp;

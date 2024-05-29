@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3082217944214834460}
   - component: {fileID: 2599056936025998742}
   - component: {fileID: 6152560898340361303}
+  - component: {fileID: 4520001972333690599}
   m_Layer: 0
   m_Name: LegoUnpainted
   m_TagString: Untagged
@@ -114,3 +115,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.035200074, y: 0.055468656, z: 0.08630313}
   m_Center: {x: 0.0061080726, y: 8.48, z: -1.37}
+--- !u!114 &4520001972333690599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608043062305733694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dea739a419ca446b0c56a41d39b01d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propName: Lego
