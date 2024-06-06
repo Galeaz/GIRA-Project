@@ -49,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         playerInteract = "Interact" + playerNum;
-        playerPaint = "Paint" + playerNum; 
+        playerPaint = "Paint" + playerNum;
     }
 
     private void Update()
