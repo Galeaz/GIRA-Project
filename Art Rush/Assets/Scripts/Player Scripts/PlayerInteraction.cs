@@ -203,7 +203,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     item_held = counter.GetContainedProp();
                     item_held.GetComponent<MeshRenderer>().material.color = current_color;
-                    item_held.GetChild(0).GetComponent<MeshRenderer>().material.color = current_color;
+                    item_held.GetComponent<MeshRenderer>().material.color = current_color; //ERASED .GetChild(0) after item_held
                 }
                 else
                 {

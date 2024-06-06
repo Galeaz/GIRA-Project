@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9089030389969772002
+--- !u!1 &5608043062305733694
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8460408099882174296}
-  - component: {fileID: 4811730898743429373}
-  - component: {fileID: 7287462514392005687}
-  - component: {fileID: -8045417330119086816}
-  - component: {fileID: 7936230863519226510}
-  - component: {fileID: -3531334474773339894}
+  - component: {fileID: 5486751775057027064}
+  - component: {fileID: 589744737189453505}
+  - component: {fileID: 3082217944214834460}
+  - component: {fileID: 2599056936025998742}
+  - component: {fileID: 6152560898340361303}
+  - component: {fileID: 4520001972333690599}
   m_Layer: 0
-  m_Name: BallUnpainted
+  m_Name: LegoUnpainted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8460408099882174296
+--- !u!4 &5486751775057027064
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
+  m_GameObject: {fileID: 5608043062305733694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 26.09, y: 26.09, z: 26.09}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -1.24, y: 5.02, z: -0.36209}
+  m_LocalScale: {x: 71.89445, y: 37.841736, z: 24.029875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4811730898743429373
+--- !u!33 &589744737189453505
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
-  m_Mesh: {fileID: 7843535567583937670, guid: 7f57dac7731828f4994dcd48c1a60316, type: 3}
---- !u!23 &7287462514392005687
+  m_GameObject: {fileID: 5608043062305733694}
+  m_Mesh: {fileID: -3859059108057839520, guid: 5b4b76de4076c294298eaba639d7217c, type: 3}
+--- !u!23 &3082217944214834460
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
+  m_GameObject: {fileID: 5608043062305733694}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,8 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8848810374240701247, guid: 7f57dac7731828f4994dcd48c1a60316, type: 3}
-  - {fileID: 9155619690614405080, guid: 7f57dac7731828f4994dcd48c1a60316, type: 3}
+  - {fileID: 9155619690614405080, guid: 5b4b76de4076c294298eaba639d7217c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,26 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &-8045417330119086816
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.0092508625
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7936230863519226510
+--- !u!54 &2599056936025998742
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
+  m_GameObject: {fileID: 5608043062305733694}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -116,16 +102,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3531334474773339894
+--- !u!65 &6152560898340361303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608043062305733694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.035200074, y: 0.055468656, z: 0.08630313}
+  m_Center: {x: 0.0061080726, y: 8.48, z: -1.37}
+--- !u!114 &4520001972333690599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089030389969772002}
+  m_GameObject: {fileID: 5608043062305733694}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71dea739a419ca446b0c56a41d39b01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propName: BallUnpainted
+  propName: Lego

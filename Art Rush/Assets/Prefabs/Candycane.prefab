@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7942500732287772162}
   - component: {fileID: 6455546956386527655}
   - component: {fileID: 9111418152643009901}
+  - component: {fileID: 6333912273290805504}
+  - component: {fileID: 316122646326869439}
   m_Layer: 0
   m_Name: Candycane
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7310115122418728120}
   m_LocalRotation: {x: -0.70890725, y: 0.010739512, z: -0.03414839, w: 0.70439273}
-  m_LocalPosition: {x: -3.0984, y: -2.175, z: 7.9553}
-  m_LocalScale: {x: 14.664974, y: 14.664982, z: 14.664977}
+  m_LocalPosition: {x: -2.8246, y: -3.0279, z: 7.9706}
+  m_LocalScale: {x: 97.514114, y: 97.51416, z: 97.51412}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,3 +86,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6333912273290805504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310115122418728120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00971471, y: 0.0018078901, z: 0.0211701}
+  m_Center: {x: -0.0039542494, y: 1.5631835e-10, z: 0.010064875}
+--- !u!54 &316122646326869439
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310115122418728120}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
