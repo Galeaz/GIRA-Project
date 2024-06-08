@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 6302477032031671456}
   - component: {fileID: 1214652580591419732}
   - component: {fileID: 6114849809144371401}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MrClaw
   m_TagString: Player
   m_Icon: {fileID: 0}

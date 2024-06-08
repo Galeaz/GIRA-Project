@@ -8,6 +8,7 @@ public class CountDownTimer : MonoBehaviour
 {
     float currentTime = 0f;
     bool timerToggle = true; //keeping track if timer enabled
+    bool aiSpawned = false; //track if AI characters have been spawned
 
     [SerializeField] float startingTime; //time the level will have
     [SerializeField] int required_score; //scored needed to win
@@ -23,6 +24,8 @@ public class CountDownTimer : MonoBehaviour
     [SerializeField] TextMeshProUGUI requiredScoreTextWinScreen; //score required for win screen
     [SerializeField] TextMeshProUGUI requiredScoreTextLoseScreen; //score required for lose screen
     [SerializeField] TextMeshProUGUI scoreTextGame; //score text object
+
+    [SerializeField] ChildSpawner spawner; // Reference to the ChildSpawner script
 
     void Start()
     {
@@ -47,9 +50,11 @@ public class CountDownTimer : MonoBehaviour
                 endGame();
             }
 
-            if (currentTime <= 10) //when player has less than 10 seconds left
+            if (currentTime <= 10 && !aiSpawned) //when player has less than 10 seconds left and AI has not been spawned
             {
                 countTimeText.color = Color.red; //changing text color to red
+                spawner.SpawnAICharacters(); //spawn AI characters
+                aiSpawned = true; //ensure AI characters are only spawned once
             }
 
             DisplayTime(currentTime);
