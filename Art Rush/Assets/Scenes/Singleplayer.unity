@@ -6263,6 +6263,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4007476924518880348, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.765
+      objectReference: {fileID: 0}
     - target: {fileID: 6302477031495471409, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -6928,7 +6932,7 @@ PrefabInstance:
     - target: {fileID: 79419926, guid: 02d75832f497cc04aa5547ff47a28cd0, type: 3}
       propertyPath: toSpawnProp
       value: 
-      objectReference: {fileID: 5966874602118451805, guid: 79bd94b96c86247458efc5d3ee24f80e, type: 3}
+      objectReference: {fileID: 4263720235631489447, guid: 400b36fa22adddb429579097ca9fee39, type: 3}
     - target: {fileID: 79419926, guid: 02d75832f497cc04aa5547ff47a28cd0, type: 3}
       propertyPath: player_grab_loc
       value: 
@@ -9886,15 +9890,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Size.y
-      value: 5.063185
+      value: 6.0701613
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Center.y
-      value: -1.71654
+      value: -1.2130511
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Center.z
       value: -1.8596467
+      objectReference: {fileID: 0}
+    - target: {fileID: 541872293194886805, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 5083720549138610559, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_LocalPosition.z
