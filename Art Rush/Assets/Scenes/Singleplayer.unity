@@ -4560,6 +4560,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer WallCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 4979729230481379179, guid: de9215b0e6a558042b71897ddcb19e92, type: 3}
+      propertyPath: m_Size.y
+      value: 0.49926856
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979729230481379179, guid: de9215b0e6a558042b71897ddcb19e92, type: 3}
+      propertyPath: m_Center.y
+      value: -0.25036457
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979729230481379179, guid: de9215b0e6a558042b71897ddcb19e92, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9215b0e6a558042b71897ddcb19e92, type: 3}
 --- !u!4 &812844989 stripped
@@ -8200,7 +8212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686242032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.93, y: 0.26, z: -7.42}
+  m_LocalPosition: {x: 11.93, y: 0.26, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
