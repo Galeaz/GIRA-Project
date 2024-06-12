@@ -7682,10 +7682,10 @@ MonoBehaviour:
   - {fileID: 8425122598522636924, guid: a5191cb2b9f3cc040bb363ab53f50ac0, type: 3}
   - {fileID: 4520001972333690599, guid: d155040b0002d904db6db7c503990345, type: 3}
   - {fileID: -3735965418507817123, guid: 00739a9e26fb79e469b60cadb91d7ddc, type: 3}
-  - {fileID: 2650825712477966112, guid: f834e3a1fac2859459cb31efa9d61996, type: 3}
-  appleProp: {fileID: 21300000, guid: 9215d95476691e04980011b4f671f9c6, type: 3}
-  duckProp: {fileID: 21300000, guid: 08fceeddf3633364e99971f0a6d00655, type: 3}
-  candleProp: {fileID: 21300000, guid: 0c8c23444c583844c8aaab7b2eddee8b, type: 3}
+  - {fileID: -3972869865562681733, guid: b5cf817acdf5dcb40bce9cf6091ee224, type: 3}
+  appleProp: {fileID: 21300000, guid: 37fb39dbab67a5b4f969d8365ae83a03, type: 3}
+  duckProp: {fileID: 21300000, guid: 133492d31bd48e54699c67c7f37f8957, type: 3}
+  candleProp: {fileID: 21300000, guid: c9a6fa5f45c5c8342862d6951b228302, type: 3}
   iceProp: {fileID: 21300000, guid: 03017d98edf2534428d6c93fb20fce4e, type: 3}
   vaseProp: {fileID: 0}
   blueColor: {fileID: 308676675, guid: ae6b7452cc8ff874f8d40460b454500a, type: 3}
@@ -10285,7 +10285,7 @@ PrefabInstance:
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: duckProp
       value: 
-      objectReference: {fileID: 21300000, guid: 08fceeddf3633364e99971f0a6d00655, type: 3}
+      objectReference: {fileID: 21300000, guid: 133492d31bd48e54699c67c7f37f8957, type: 3}
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: redColor
       value: 
@@ -10297,7 +10297,7 @@ PrefabInstance:
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: appleProp
       value: 
-      objectReference: {fileID: 21300000, guid: 9215d95476691e04980011b4f671f9c6, type: 3}
+      objectReference: {fileID: 21300000, guid: 37fb39dbab67a5b4f969d8365ae83a03, type: 3}
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: blueColor
       value: 
@@ -10305,7 +10305,7 @@ PrefabInstance:
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: candleProp
       value: 
-      objectReference: {fileID: 21300000, guid: 0c8c23444c583844c8aaab7b2eddee8b, type: 3}
+      objectReference: {fileID: 21300000, guid: c9a6fa5f45c5c8342862d6951b228302, type: 3}
     - target: {fileID: 8782857549358550071, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: yellowColor
       value: 
