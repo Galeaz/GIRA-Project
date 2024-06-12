@@ -7582,7 +7582,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2147483647
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -10117,15 +10117,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Size.y
-      value: 5.063185
+      value: 3.6927598
+      objectReference: {fileID: 0}
+    - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
+      propertyPath: m_Size.z
+      value: 2.7887483
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Center.y
-      value: -1.71654
+      value: -1.0313282
       objectReference: {fileID: 0}
     - target: {fileID: 541872292568899658, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_Center.z
-      value: -1.8596467
+      value: -1.8364621
       objectReference: {fileID: 0}
     - target: {fileID: 5083720549138610559, guid: a56b434ee42e59147b628cfcdd3b6d91, type: 3}
       propertyPath: m_LocalPosition.z
