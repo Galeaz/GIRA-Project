@@ -16,8 +16,6 @@ public class AIPatrol : MonoBehaviour
     Vector3 destPoint;
     bool walkPointSet;
 
-    [SerializeField] float range;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +33,13 @@ public class AIPatrol : MonoBehaviour
     {
         if (!walkPointSet) SearchForDest();
         if (walkPointSet) agent.SetDestination(destPoint);
-        if (Vector3.Distance(transform.position, destPoint) < 10) walkPointSet = false;
+        if (Vector3.Distance(transform.position, destPoint) < 3) walkPointSet = false;
     }
 
     void SearchForDest()
     {
-        float Z = Random.Range(-range, range);
-        float X = Random.Range(-range, range);
+        float Z = Random.Range(-10, 10);
+        float X = Random.Range(-7, 7);
 
         destPoint = new Vector3(transform.position.x + X, transform.position.y, transform.position.z + Z);
 
