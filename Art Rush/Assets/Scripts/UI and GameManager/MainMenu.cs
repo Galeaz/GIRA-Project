@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlaySingleGame()
     {
-        SceneManager.LoadScene("Singleplayer Game"); //loads singleplayer game scene
+        SceneManager.LoadScene("Singleplayer"); //loads singleplayer game scene
     }
     
     public void PlayMultiplayerGame()
