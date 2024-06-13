@@ -7377,6 +7377,10 @@ PrefabInstance:
       propertyPath: color_indicator
       value: 
       objectReference: {fileID: 1368873971}
+    - target: {fileID: 6302477032031671456, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
+      propertyPath: cybertruckPrefab
+      value: 
+      objectReference: {fileID: 7142477239013481760, guid: 2430b547d7ec42c4a9967466053d6e12, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
 --- !u!1 &1336319930
@@ -11905,6 +11909,10 @@ PrefabInstance:
     - target: {fileID: 7646323122676898207, guid: 9b89be405b38ab540967c4dda6a1a24e, type: 3}
       propertyPath: m_Name
       value: Car Counter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646323122676898207, guid: 9b89be405b38ab540967c4dda6a1a24e, type: 3}
+      propertyPath: m_TagString
+      value: car counter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b89be405b38ab540967c4dda6a1a24e, type: 3}

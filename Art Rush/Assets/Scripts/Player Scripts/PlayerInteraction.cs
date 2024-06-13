@@ -36,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeReference]
     private Transform brush;
     // Stores the item the player is holding by reference to the transform
-    [SerializeField] 
+    [SerializeField]
     public Transform item_held;
     // Keeps track if Item is held or not
     [SerializeField]
@@ -47,7 +47,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public Color current_color;
 
-    public GameObject cybertruckPrefab;
+    public GameObject cybertruckPrefab; //GABY ***************************************************************************
 
     private void Start()
     {
@@ -106,10 +106,12 @@ public class PlayerInteraction : MonoBehaviour
                         }
                     }
                 }
+                //GABY***************************************************************************************************************************
                 else if (target.tag == "car counter" && holding_item == true && item_held.tag == "CarTop")
                 {
                     AssembleCarToy();
                 }
+                //***************************************************************************************************************************
                 // If interact with Trash Can
                 else if (target.tag == "TrashCan")
                 {
@@ -171,23 +173,24 @@ public class PlayerInteraction : MonoBehaviour
         // If players presses the paint button "q".
         else if (Input.GetButtonDown(playerPaint))
         {
-                castTime = 2f;
-                if (!castInProgress)
-                {
-                    StartCoroutine(Cast());
-                }
-            }
-
-            if (castRequest)
+            castTime = 2f;
+            if (!castInProgress)
             {
-                ProgressSlider();
-
-                if (Input.GetButtonUp(playerPaint))
-                {
-                    CastFail();
-                }
+                StartCoroutine(Cast());
             }
         }
+
+        if (castRequest)
+        {
+            ProgressSlider();
+
+            if (Input.GetButtonUp(playerPaint))
+            {
+                CastFail();
+            }
+        }
+    }
+    //GABY***************************************************************************************************************************
     private void AssembleCarToy()
     {
         if (cybertruckPrefab != null)
@@ -202,7 +205,7 @@ public class PlayerInteraction : MonoBehaviour
             Debug.LogError("Car prefab reference is missing.");
         }
     }
-
+    //***************************************************************************************************************************
     private IEnumerator Cast()
     {
         // Do a raycast in front of player
@@ -270,7 +273,7 @@ public class PlayerInteraction : MonoBehaviour
     void checkRayCastInFront()
     {
         ray = new Ray(transform.position, transform.forward);
-        
+
         // Physics.Raycast returns true if there was a hit
         if (Physics.Raycast(ray, out hit, max_dist, layers_to_hit))
         {
@@ -287,23 +290,23 @@ public class PlayerInteraction : MonoBehaviour
                 // If there was a previous target stored and its not equal to the new one
                 // Detarget it using the Interactable.Offtarget()
                 if (target != null && target != interactable)
-                { 
+                {
                     target.Offtarget();
                 }
-                
+
                 // Set target to the new interactable in front of the player
                 // and change the internal values of the target
                 target = interactable;
                 target.Ontarget(transform);
             }
             // If the object hit was not an interactable detarget and change values
-            else 
+            else
             {
                 if (target != null)
                 {
                     target.Offtarget();
                 }
-                target = null; 
+                target = null;
             }
         }
         // If no object was hit with raycast reset target

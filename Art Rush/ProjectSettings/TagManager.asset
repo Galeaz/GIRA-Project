@@ -23,9 +23,8 @@ TagManager:
   - Props
   - Colors
   - painting counter
-  - CandyCane
-  - Cookie
-  - Gingerbread
+  - CarTop
+  - car counter
   layers:
   - Default
   - TransparentFX
@@ -35,8 +34,8 @@ TagManager:
   - UI
   - Appliances
   - Customers
-  - Navmesh
-  - Player
+  - 
+  - 
   - 
   - 
   - 
