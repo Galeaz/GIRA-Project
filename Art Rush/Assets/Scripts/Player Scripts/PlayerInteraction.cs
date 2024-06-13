@@ -31,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
     private int playerNum;
     private string playerInteract;
     private string playerPaint;
+    private string playerAssemble;
 
     [SerializeReference]
     private Transform brush;
@@ -46,10 +47,13 @@ public class PlayerInteraction : MonoBehaviour
 
     public Color current_color;
 
+    public GameObject cybertruckPrefab;
+
     private void Start()
     {
         playerInteract = "Interact" + playerNum;
         playerPaint = "Paint" + playerNum;
+        playerAssemble = "Assemble" + playerNum;
     }
 
     private void Update()
@@ -73,7 +77,7 @@ public class PlayerInteraction : MonoBehaviour
                     target.Interact();
                     // item held stores the transform of the held item
                     item_held = player_grab_loc.GetChild(0);
-                    
+
                     holding_item = true;
                 }
                 // If interact with Item Counter
@@ -100,7 +104,11 @@ public class PlayerInteraction : MonoBehaviour
                             holding_item = true;
                             item_held = player_grab_loc.GetChild(0);
                         }
-                    }                  
+                    }
+                }
+                else if (target.tag == "car counter" && holding_item == true && item_held.tag == "CarTop")
+                {
+                    AssembleCarToy();
                 }
                 // If interact with Trash Can
                 else if (target.tag == "TrashCan")
@@ -163,21 +171,35 @@ public class PlayerInteraction : MonoBehaviour
         // If players presses the paint button "q".
         else if (Input.GetButtonDown(playerPaint))
         {
-            castTime = 2f;
-            if (!castInProgress)
+                castTime = 2f;
+                if (!castInProgress)
+                {
+                    StartCoroutine(Cast());
+                }
+            }
+
+            if (castRequest)
             {
-                StartCoroutine(Cast());
+                ProgressSlider();
+
+                if (Input.GetButtonUp(playerPaint))
+                {
+                    CastFail();
+                }
             }
         }
-
-        if (castRequest)
+    private void AssembleCarToy()
+    {
+        if (cybertruckPrefab != null)
         {
-            ProgressSlider();
-
-            if (Input.GetButtonUp(playerPaint))
-            {
-                CastFail();
-            }
+            GameObject assembledCar = Instantiate(cybertruckPrefab, player_grab_loc.position, player_grab_loc.rotation);
+            Destroy(item_held.gameObject);
+            item_held = assembledCar.transform;
+            holding_item = true;
+        }
+        else
+        {
+            Debug.LogError("Car prefab reference is missing.");
         }
     }
 
