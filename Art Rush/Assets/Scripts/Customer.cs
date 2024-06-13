@@ -42,6 +42,7 @@ public class Customer : Interactable
 
     // Time Customer has been waiting
     private float wait_time = 0.0f;
+
     
     public override void Interact()
     {
@@ -51,12 +52,21 @@ public class Customer : Interactable
         {
             // Get the name and color of the prop the player is trying to give
             string p = player_grab_loc.GetChild(0).tag;
+            Debug.Log(p);
+            Debug.Log(wanted_prop.tag);
             Color c = player_grab_loc.GetChild(0).GetComponent<MeshRenderer>().material.color;
             
             // If the prop is the correct order the Customer grabs it
             if (p == wanted_prop.tag && c == wanted_color)
             {
                 PlaceProp(player_grab_loc.GetChild(0));             
+            }
+
+            if (( p == "CandyCane" || p == "Cookie" || p == "Gingerbread" ) && p == wanted_prop.tag)
+            {
+                Debug.Log("This works");
+                gsm.addToScore(50);
+                Destroy(gameObject);
             }
         }
     }

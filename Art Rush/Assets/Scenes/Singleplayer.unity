@@ -3098,7 +3098,7 @@ Transform:
   - {fileID: 1714264433}
   - {fileID: 959250499}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &493121884 stripped
 Transform:
@@ -3762,6 +3762,7 @@ MonoBehaviour:
   requiredScoreTextWinScreen: {fileID: 2075254413}
   requiredScoreTextLoseScreen: {fileID: 1810045614}
   scoreTextGame: {fileID: 686054788}
+  spawner: {fileID: 0}
 --- !u!1 &697838806
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,7 +6433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6302477031495471409, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6302477031495471409, guid: 5dd3c874edaaa344e8b8e4556c9dba34, type: 3}
       propertyPath: m_LocalScale.x
@@ -7580,7 +7581,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1562193265
 PrefabInstance:
@@ -8362,7 +8363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692739604
 GameObject:
@@ -8805,7 +8806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 65968b9eac5fcb447b077bfcc9910942, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65968b9eac5fcb447b077bfcc9910942, type: 3}
       propertyPath: m_LocalScale.x
@@ -10976,7 +10977,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8782857549358550068, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8782857549358550068, guid: c3a98aba1f386034295b2282005e04a0, type: 3}
       propertyPath: m_LocalPosition.x

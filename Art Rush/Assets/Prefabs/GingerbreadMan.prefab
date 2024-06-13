@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1948675053585773957}
   m_Layer: 0
   m_Name: GingerbreadMan
-  m_TagString: Untagged
+  m_TagString: Gingerbread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

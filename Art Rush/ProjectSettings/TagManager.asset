@@ -23,6 +23,9 @@ TagManager:
   - Props
   - Colors
   - painting counter
+  - CandyCane
+  - Cookie
+  - Gingerbread
   layers:
   - Default
   - TransparentFX
