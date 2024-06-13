@@ -9,19 +9,27 @@ public class GameManager : MonoBehaviour
     public GameObject Resume_Button;
 
     public Behaviour gameStartCanvas; //canvas start banner
+    public GameObject gametuto1;
+    public GameObject gametuto2;
     public float startTime;
 
     void Start()
     {
         PauseGame(); //starts with game paused to avoid player from moving
-        StartCoroutine(ShowBannerAndContinue(startTime)); //will disable start canvas banner after specified time
+        StartCoroutine(ShowBannerAndContinue(startTime)); //will disable start canvas banner after specified time    
     }
 
     private IEnumerator ShowBannerAndContinue(float waitTime)
     {
         gameStartCanvas.enabled = true; //shows start match banner
-        yield return new WaitForSecondsRealtime(waitTime); //will wait to disable canvas banner
+        gametuto1.SetActive(true);
+        yield return new WaitForSecondsRealtime(waitTime); //will wait to disable control canvas banner
 
+        gametuto1.SetActive(false);
+        gametuto2.SetActive(true);
+        yield return new WaitForSecondsRealtime(waitTime); //will wait to disable how to play canvas banner
+
+        gametuto2.SetActive(false);
         gameStartCanvas.enabled = false; //disables start match banner
         ResumeGame(); //resume game to play
     }
