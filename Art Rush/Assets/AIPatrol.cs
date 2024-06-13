@@ -38,7 +38,7 @@ public class AIPatrol : MonoBehaviour
 
     void SearchForDest()
     {
-        float Z = Random.Range(-10, 10);
+        float Z = Random.Range(-13, 13);
         float X = Random.Range(-7, 7);
 
         destPoint = new Vector3(transform.position.x + X, transform.position.y, transform.position.z + Z);
