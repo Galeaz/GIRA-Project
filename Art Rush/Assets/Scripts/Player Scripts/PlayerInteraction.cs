@@ -47,8 +47,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public Color current_color;
 
-    public GameObject cybertruckPrefab; //GABY ***************************************************************************
-
     private void Start()
     {
         playerInteract = "Interact" + playerNum;
@@ -106,12 +104,7 @@ public class PlayerInteraction : MonoBehaviour
                         }
                     }
                 }
-                //GABY***************************************************************************************************************************
-                else if (target.tag == "car counter" && holding_item == true && item_held.tag == "CarTop")
-                {
-                    AssembleCarToy();
-                }
-                //***************************************************************************************************************************
+
                 // If interact with Trash Can
                 else if (target.tag == "TrashCan")
                 {
@@ -190,22 +183,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
-    //GABY***************************************************************************************************************************
-    private void AssembleCarToy()
-    {
-        if (cybertruckPrefab != null)
-        {
-            GameObject assembledCar = Instantiate(cybertruckPrefab, player_grab_loc.position, player_grab_loc.rotation);
-            Destroy(item_held.gameObject);
-            item_held = assembledCar.transform;
-            holding_item = true;
-        }
-        else
-        {
-            Debug.LogError("Car prefab reference is missing.");
-        }
-    }
-    //***************************************************************************************************************************
+
     private IEnumerator Cast()
     {
         // Do a raycast in front of player
