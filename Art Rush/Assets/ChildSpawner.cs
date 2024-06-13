@@ -17,8 +17,8 @@ public class ChildSpawner : MonoBehaviour
             {
                 prefabNum = 0;
             }
-            // Instantiate AI character at the position of the spawn point
             Instantiate(aiPrefabs[prefabNum], spawnPoints[i].position, Quaternion.identity);
+
             prefabNum++;
         }
     }

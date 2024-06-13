@@ -50,7 +50,7 @@ public class CountDownTimer : MonoBehaviour
                 endGame();
             }
 
-            if (currentTime <= 10 && !aiSpawned) //when player has less than 10 seconds left and AI has not been spawned
+            if (currentTime <= 20 && !aiSpawned) //when player has less than 10 seconds left and AI has not been spawned
             {
                 countTimeText.color = Color.red; //changing text color to red
                 spawner.SpawnAICharacters(); //spawn AI characters

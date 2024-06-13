@@ -25,6 +25,10 @@ TagManager:
   - painting counter
   - CarTop
   - car counter
+  - Undefined
+  - CandyCane
+  - Cookie
+  - Gingerbread
   layers:
   - Default
   - TransparentFX
